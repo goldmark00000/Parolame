@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Parolame</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="wordle.js"></script>
+    <link rel="stylesheet" href="wordle.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+    </style>
+
+</head>
+
+<body>
+    <div id="blur">
+        <div class="active" id="overlay">
+            <br><br>
+            <center>
+                <div id="header">
+
+                    <img style="width: 30%; margin-top: 1.5%;" src="title.png" id="title"> <img src="info.png"
+                        onclick="modulo()" class="info">
+                </div>
+                <div id="caselle">
+                    <input autocomplete="off" class="input" type="text" id="id0" maxlength="1"
+                        onkeyup="jump001(this,'id1')" autofocus><input autocomplete="off" class="input" type="text"
+                        id="id1" maxlength="1" onkeyup="jump001(this,'id2')"><input autocomplete="off" class="input"
+                        type="text" id="id2" maxlength="1" onkeyup="jump001(this,'id3')"><input autocomplete="off"
+                        class="input" type="text" id="id3" maxlength="1" onkeyup="jump001(this,'id4')"><input
+                        autocomplete="off" class="input" type="text" id="id4" maxlength="1"
+                        onkeyup="jump001(this,'verifica')"><br>
+                    <input autocomplete="off" class="input" type="text" id="id5" maxlength="1"
+                        onkeyup="jump001(this,'id6')"><input autocomplete="off" class="input" type="text" id="id6"
+                        maxlength="1" onkeyup="jump001(this,'id7')"><input autocomplete="off" class="input" type="text"
+                        id="id7" maxlength="1" onkeyup="jump001(this,'id8')"><input autocomplete="off" class="input"
+                        type="text" id="id8" maxlength="1" onkeyup="jump001(this,'id9')"><input autocomplete="off"
+                        class="input" type="text" id="id9" maxlength="1" onkeyup="jump001(this,'verifica')"><br>
+                    <input autocomplete="off" class="input" type="text" id="id10" maxlength="1"
+                        onkeyup="jump001(this,'id11')"><input autocomplete="off" class="input" type="text" id="id11"
+                        maxlength="1" onkeyup="jump001(this,'id12')"><input autocomplete="off" class="input" type="text"
+                        id="id12" maxlength="1" onkeyup="jump001(this,'id13')"><input autocomplete="off" class="input"
+                        type="text" id="id13" maxlength="1" onkeyup="jump001(this,'id14')"><input autocomplete="off"
+                        class="input" type="text" id="id14" maxlength="1" onkeyup="jump001(this,'verifica')"><br>
+                    <input autocomplete="off" class="input" type="text" id="id15" maxlength="1"
+                        onkeyup="jump001(this,'id16')"><input autocomplete="off" class="input" type="text" id="id16"
+                        maxlength="1" onkeyup="jump001(this,'id17')"><input autocomplete="off" class="input" type="text"
+                        id="id17" maxlength="1" onkeyup="jump001(this,'id18')"><input autocomplete="off" class="input"
+                        type="text" id="id18" maxlength="1" onkeyup="jump001(this,'id19')"><input autocomplete="off"
+                        class="input" type="text" id="id19" maxlength="1" onkeyup="jump001(this,'verifica')"><br>
+                    <input autocomplete="off" class="input" type="text" id="id20" maxlength="1"
+                        onkeyup="jump001(this,'id21')"><input autocomplete="off" class="input" type="text" id="id21"
+                        maxlength="1" onkeyup="jump001(this,'id22')"><input autocomplete="off" class="input" type="text"
+                        id="id22" maxlength="1" onkeyup="jump001(this,'id23')"><input autocomplete="off" class="input"
+                        type="text" id="id23" maxlength="1" onkeyup="jump001(this,'id24')"><input autocomplete="off"
+                        class="input" type="text" id="id24" maxlength="1" onkeyup="jump001(this,'verifica')"><br>
+                    <input autocomplete="off" class="input" type="text" id="id25" maxlength="1"
+                        onkeyup="jump001(this,'id26')"><input autocomplete="off" class="input" type="text" id="id26"
+                        maxlength="1" onkeyup="jump001(this,'id27')"><input autocomplete="off" class="input" type="text"
+                        id="id27" maxlength="1" onkeyup="jump001(this,'id28')"><input autocomplete="off" class="input"
+                        type="text" id="id28" maxlength="1" onkeyup="jump001(this,'id29')"><input autocomplete="off"
+                        class="input" type="text" id="id29" maxlength="1" onkeyup="jump001(this,'verifica')">
+                </div>
+                <br><br><br><br>
+                <button onclick="prova();blocca()" class="button" id="verifica"
+                    style="vertical-align:middle"><span>Conferma</span></button>
+        </div>
+    </div>
+    </center>
+    <div id="lose">
+        <img class="lose" src="lose.png" onclick="location.reload()" width="100%">
+    </div>
+    <div id="win">
+        <img class="win" src="win.png" onclick="location.reload()" width="100%">
+    </div>
+
+
+    <div id="modulo" class="modulo">
+        <div class="titolo">REGOLE<button class="chiusura" onclick="chiusura()">&times;</button></div>
+        <div class="testo"> Hai a disposizione 6 tentativi per indovinare la parola segreta. Se indovini la posizione
+            esatta di una delle sue lettere la corrispettiva casella si colorerà di verde, se invece la lettera è
+            corretta ma la sua posizione errata la casella si colorerà di giallo. Al termine dei tentativi se non avrai
+            indovinato la parola ti apparirà a schermo la soluzione e potrai ritentare. Sono attualmente presenti 57
+            parole diverse tra cui riferiemti letterari e storici.</div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
