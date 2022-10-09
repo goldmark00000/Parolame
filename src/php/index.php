@@ -6,8 +6,6 @@ $host=$settings["host"];
 $user=$settings["user"];
 $password=$settings["password"];
 
-echo $host;
-echo $user;
-echo $password;
+$connection=new mysqli($host, $user, $password);
 
 ?>
