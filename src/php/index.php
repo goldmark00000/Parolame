@@ -7,5 +7,5 @@ $user=$settings["user"];
 $password=$settings["password"];
 
 $connection=new mysqli($host, $user, $password);
-
+echo "ciao";
 ?>
