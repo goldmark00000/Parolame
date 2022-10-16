@@ -2,7 +2,7 @@
 
 include "./php/getwordl.php";
 
-
+echo "work";
 
 
 ?>
