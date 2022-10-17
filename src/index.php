@@ -2,7 +2,9 @@
 
 include "./php/getwordl.php";
 
-echo "work";
+echo $host;
+echo $user;
+echo $password;
 
 
 ?>
