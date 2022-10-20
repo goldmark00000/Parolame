@@ -6,7 +6,7 @@ echo $host;
 echo $user;
 echo $password;
 
-
+$connection=sqlite_open();
 
 ?>
 
