@@ -1,3 +1,3 @@
 *.db
-./src/phpliteadmin.config.php
-./src/phpliteadmin.php
+./src/php/phpliteadmin.config.php
+./src/php/phpliteadmin.php
