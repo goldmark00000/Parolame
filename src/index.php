@@ -10,8 +10,6 @@ class MyDB extends SQLite3
 $db = new MyDB();
 if (!$db) {
     echo $db->lastErrorMsg();
-} else {
-    echo "Database exist!";
 }
 
 
