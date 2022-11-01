@@ -1,4 +1,7 @@
 <?php
+if (!file_exists("./php/Subject.php")) exit();
+if (!file_exists("./php/create_account.php")) exit();
+
 if (!isset($_COOKIE["ID_user"])) {
     echo "sei nuovo";
     $name = "ID_user";
@@ -7,13 +10,17 @@ if (!isset($_COOKIE["ID_user"])) {
     // header("Location: http://localhost/Parolame/src/php/create_account.php");
     exit();
 }
-    
-    require("./php/getdate.php");
-    echo $_SESSION["subject"];
-    session_unset();
-    session_destroy();
 
-
+require_once("./php/Subject.php");
+$subject;
+try {
+    $sbj = new Subject();
+    $subject = $sbj->getSubject();
+} catch (Exception $e) {
+    echo $e;
+    exit();
+}
+echo $subject;
 
 ?>
 
