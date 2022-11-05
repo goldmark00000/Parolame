@@ -1,117 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parolame</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js" defer></script>
-</head>
-
-<body>
-    <div class="sfondo-game">
-        <span class="info-rules">
-            <img>
-        </span>
-        <span class="title-image">
-            <img>
-        </span>
-        <tavolo-gioco>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-            <div class="casella-gioco">
-                <text></text>
-            </div>
-        </tavolo-gioco>
-        <button class="confirm-button">Conferma</button>
-    </div>
-</body>
-
+    <head>
+        <title>Parolame</title>
+		<meta charset="UTF-8">
+        <!--<meta charset="UTF-8">                                                      ??
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">                           ??
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">          ??-->       
+        <link href="index.css" rel="stylesheet" type="text/css">
+	    <script language="javascript" src="index.js"></script>
+    </head> 
+    <body>
+		<form>
+			<center>
+				<div id="blur">
+					<div id="header">
+						<img src="img/title.png" id="img_title">
+						<!--<img id="	" onclick="	()">-->
+					</div>
+					<div id="boxes">
+						<table border="0" cellspacing="3">
+							<tr>
+								<th><input autocomplete="off" class="input" type="text" id="1" maxlength="1" onkeyup="jump_to_next_box(this)" autofocus>
+								<th><input autocomplete="off" class="input" type="text" id="2" maxlength="1" onkeyup="jump_to_next_box(this)">
+								<th><input autocomplete="off" class="input" type="text" id="3" maxlength="1" onkeyup="jump_to_next_box(this)">
+								<th><input autocomplete="off" class="input" type="text" id="4" maxlength="1" onkeyup="jump_to_next_box(this)">
+								<th><input autocomplete="off" class="input" type="text" id="5" maxlength="1" onkeyup="jump_to_conferm(this)">
+							</tr>
+							<tr>
+								<th><input autocomplete="off" class="input" type="text" id="	" maxlength="1" onkeyup="jump(this,'	')">
+								<th><input autocomplete="off" class="input" type="text" id="	" maxlength="1" onkeyup="jump(this,'	')">
+								<th><input autocomplete="off" class="input" type="text" id="	" maxlength="1" onkeyup="jump(this,'	')">
+								<th><input autocomplete="off" class="input" type="text" id="	" maxlength="1" onkeyup="jump(this,'	')">
+								<th><input autocomplete="off" class="input" type="text" id="	" maxlength="1" onkeyup="jump_conferm('conferm')">
+							</tr>
+							<tr>
+								<th>
+								<th>
+								<th>
+								<th>
+								<th>
+							</tr>
+							<tr>
+								<th>
+								<th>
+								<th>
+								<th>
+								<th>
+							</tr>
+							<tr>
+								<th>
+								<th>
+								<th>
+								<th>
+								<th>
+							</tr>
+							<tr>
+								<th>
+								<th>
+								<th>
+								<th>
+								<th>
+							</tr>
+						</table>
+						<input type="button" value="Conferma" <!--onclick="	()"--> id="conferm">
+					</div>
+				</div>
+				<!--<img id="lose" src="lose.png" onclick="location.reload()" width="100%">
+				<img id="win" src="win.png" onclick="location.reload()" width="100%">
+				<div class="module">
+					<div class="textual_title">
+						<h4>REGOLE</h4>
+						<button class="exit_button" onclick="chiusura()">&times;</button>
+					</div>
+					<div class="text"> 
+						Hai a disposizione 6 tentativi per indovinare la parola segreta. Se indovini la posizione esatta di una delle sue lettere la corrispettiva casella si colorerà di verde, se invece la lettera è corretta ma la sua posizione errata la casella si colorerà di giallo. Al termine dei tentativi se non avrai indovinato la parola ti apparirà a schermo la soluzione e potrai ritentare. Sono attualmente presenti 57 parole diverse tra cui riferiemti letterari e storici.
+					</div>
+				</div>-->
+			</center>
+		</form>
+	</body>
 </html>
