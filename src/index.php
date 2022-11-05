@@ -26,6 +26,9 @@ try {
     echo $e;
     exit();
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="it">
