@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Parolame</title>
+	<head>
+		<title>Parolame</title>
 		<meta charset="UTF-8">
-        <!--<meta charset="UTF-8">                                                      ??
+		<!--<meta charset="UTF-8">                                                      ??
         <meta http-equiv="X-UA-Compatible" content="IE=edge">                           ??
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">          ??-->       
-        <link href="index.css" rel="stylesheet" type="text/css">
-	    <script language="javascript" src="index.js"></script>
-    </head> 
-    <body>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">          ??-->  
+		<link href="index.css" rel="stylesheet" type="text/css">
+		<script language="javascript" src="index.js"></script>
+	</head>
+	<body>
 		<form>
 			<center>
 				<div id="blur">
@@ -20,25 +20,25 @@
 					<div id="boxes">
 						<table border="0" cellspacing="3">
 							<tr>
-								<th><input autocomplete="off" class="input" type="text" id="1" maxlength="1" onkeyup="jump_to_next_box(this)" autofocus>
-								<th><input autocomplete="off" class="input" type="text" id="2" maxlength="1" onkeyup="jump_to_next_box(this)">
-								<th><input autocomplete="off" class="input" type="text" id="3" maxlength="1" onkeyup="jump_to_next_box(this)">
-								<th><input autocomplete="off" class="input" type="text" id="4" maxlength="1" onkeyup="jump_to_next_box(this)">
-								<th><input autocomplete="off" class="input" type="text" id="5" maxlength="1" onkeyup="jump_to_conferm(this)">
+								<th><input autocomplete="off" class="box" type="text" id="1" maxlength="1" onkeyup="Jump_to_box(this)" autofocus>
+								<th><input autocomplete="off" class="box" type="text" id="2" maxlength="1" onkeyup="Jump_to_box(this)">
+								<th><input autocomplete="off" class="box" type="text" id="3" maxlength="1" onkeyup="Jump_to_box(this)">
+								<th><input autocomplete="off" class="box" type="text" id="4" maxlength="1" onkeyup="Jump_to_box(this)">
+								<th><input autocomplete="off" class="box" type="text" id="5" maxlength="1" onkeyup="Jump_to_confirm(this)">
 							</tr>
 							<tr>
-								<th><input autocomplete="off" class="input" type="text" id="	" maxlength="1" onkeyup="jump(this,'	')">
-								<th><input autocomplete="off" class="input" type="text" id="	" maxlength="1" onkeyup="jump(this,'	')">
-								<th><input autocomplete="off" class="input" type="text" id="	" maxlength="1" onkeyup="jump(this,'	')">
-								<th><input autocomplete="off" class="input" type="text" id="	" maxlength="1" onkeyup="jump(this,'	')">
-								<th><input autocomplete="off" class="input" type="text" id="	" maxlength="1" onkeyup="jump_conferm('conferm')">
+								<th><input autocomplete="off" class="box" type="text" id="6" maxlength="1" onkeyup="Jump_to_box(this)" autofocus>
+								<th><input autocomplete="off" class="box" type="text" id="7" maxlength="1" onkeyup="Jump_to_box(this)">
+								<th><input autocomplete="off" class="box" type="text" id="8" maxlength="1" onkeyup="Jump_to_box(this)">
+								<th><input autocomplete="off" class="box" type="text" id="9" maxlength="1" onkeyup="Jump_to_box(this)">
+								<th><input autocomplete="off" class="box" type="text" id="10" maxlength="1" onkeyup="Jump_to_confirm(this)">
 							</tr>
 							<tr>
-								<th>
-								<th>
-								<th>
-								<th>
-								<th>
+								<th><input autocomplete="off" class="box" type="text" id="11" maxlength="1" onkeyup="Jump_to_box(this)" autofocus>
+								<th><input autocomplete="off" class="box" type="text" id="12" maxlength="1" onkeyup="Jump_to_box(this)">
+								<th><input autocomplete="off" class="box" type="text" id="13" maxlength="1" onkeyup="Jump_to_box(this)">
+								<th><input autocomplete="off" class="box" type="text" id="14" maxlength="1" onkeyup="Jump_to_box(this)">
+								<th><input autocomplete="off" class="box" type="text" id="15" maxlength="1" onkeyup="Jump_to_confirm(this)">
 							</tr>
 							<tr>
 								<th>
@@ -62,8 +62,9 @@
 								<th>
 							</tr>
 						</table>
-						<input type="button" value="Conferma" <!--onclick="	()"--> id="conferm">
 					</div>
+					<br>
+					<button type="button" onclick="Confirm()" id="confirm"><span>Conferma</span></button>
 				</div>
 				<!--<img id="lose" src="lose.png" onclick="location.reload()" width="100%">
 				<img id="win" src="win.png" onclick="location.reload()" width="100%">
