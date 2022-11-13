@@ -5,7 +5,7 @@ for($i=0; $i<$pathFilesLength; $i++){
     if (!file_exists($pathFiles[$i])){
         echo "File not found! ". $pathFiles[$i];
         exit();
-    }   
+    }
 }
 
 if (!isset($_COOKIE["ID_user"])) {
