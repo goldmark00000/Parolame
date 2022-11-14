@@ -8,14 +8,18 @@ for($i=0; $i<$pathFilesLength; $i++){
     }
 }
 
-if (!isset($_COOKIE["ID_user"])) {
-    echo "sei nuovo";
-    $name = "ID_user";
-    $value = "fff123";
-    setcookie($name, $value);
-    // header("Location: http://localhost/Parolame/src/php/create_account.php");
-    exit();
-}
+
+
+
+
+// if (!isset($_COOKIE["ID_user"])) {
+//     echo "sei nuovo";
+//     $name = "ID_user";
+//     $value = "fff123";
+//     setcookie($name, $value);
+//     // header("Location: http://localhost/Parolame/src/php/create_account.php");
+//     exit();
+// }
 
 require_once("./php/Subject.php");
 $subject;
