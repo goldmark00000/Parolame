@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-container{
+    position: relative;
+    display: flex;
+    height: 20em;
+    width: 20em;
+    background-color: red;
+}
+
+.text-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 10em;
+    width: 10em;
+    background-color: blue;
+}
+
+.text-container input{
+    width: 7em;
+    height: 1.2rem;
+}
+
+.text-container label{
+    color: white;
+}
