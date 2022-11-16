@@ -11,6 +11,7 @@ body{
 .login-container{
     position: relative;
     display: flex;
+    flex-direction: column;
     height: 20em;
     width: 20em;
     background-color: red;
@@ -18,11 +19,8 @@ body{
 
 .text-container{
     position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     height: 10em;
-    width: 10em;
+    width: 100%;
     background-color: blue;
 }
 
@@ -33,4 +31,10 @@ body{
 
 .text-container label{
     color: white;
+}
+
+.text-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
 }

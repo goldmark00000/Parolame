@@ -18,16 +18,16 @@
     <div class="login-container">
         <div class="elements-container">
             <div class="text-container">
-                <span>
+                <span class="text-input">
                     <label class="" for="idUser">Nome utente:</label>
                     <input type="text" class="id-user" id="idUser"></input>
                 </span>
-                <span>
+                <span class="text-input">
                     <label class="" for="passwordUser">Password:</label>
                     <input type="password" class="password-user" id="passwordUser"></input>
                 </span>
             </div>
-            <button class="confirm-button"></button>
+            <button class="confirm-button">Confirm</button>
         </div>
         <p class="link-create-acc">Vuoi creare un nuovo account?</p>
     </div>
