@@ -1,31 +1,41 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: black;
+}
+
+.background-container{
+    background-color: var(--black-light);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 100vw;
 }
 
 .login-container{
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 20em;
+    justify-content: center;
+    align-items: center;
+    height: 14em;
     width: 20em;
-    background-color: red;
+    background-color: var(--gray-dark);
+    border-radius: 1em;
 }
 
 .text-container{
     position: relative;
     height: 10em;
     width: 100%;
-    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .text-container input{
-    width: 7em;
+    width: 12em;
     height: 1.2rem;
 }
 
@@ -37,4 +47,18 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: left;
+    width: 12em;
+    height: auto;
+}
+
+.elements-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.link-create-acc{
+    color: white;
 }
