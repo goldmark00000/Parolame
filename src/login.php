@@ -15,20 +15,23 @@
 </head>
 
 <body>
-    <div class="background-container">
+    <div class="background">
         <div class="login-container">
             <div class="elements-container">
                 <div class="text-container">
                     <span class="text-input">
-                        <label for="idUser">Nome utente:</label>
+                        <label for="idUser" class="for-id-user">Nome utente:</label>
                         <input type="text" class="id-user" id="idUser"></input>
                     </span>
                     <span class="text-input">
-                        <label for="passwordUser">Password:</label>
+                        <label for="passwordUser" class="for-password-user">Password:</label>
                         <input type="password" class="password-user" id="passwordUser"></input>
                     </span>
                 </div>
-                <button class="confirm-button">Confirm</button>
+                <span class="buttons-space">
+                    <button class="login-button cancel-button">Cancel</button>
+                    <button class="login-button confirm-button">Confirm</button>
+                </span>
             </div>
             <p class="link-create-acc">Vuoi creare un nuovo account?</p>
         </div>
