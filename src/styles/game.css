@@ -1,0 +1,28 @@
+:root{
+    --game-height: 12em;
+    --game-width: 24em;
+}
+
+game{
+    height: var(--game-height);
+    width: var(--game-width);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5em;
+    background-color: red;
+}
+
+game-box{
+    grid-column: span 1;
+    background-color: green;
+}
+
+letter{
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

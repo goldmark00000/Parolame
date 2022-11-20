@@ -1,9 +1,9 @@
 <?php
-$pathFiles=array("./php/Subject.php","./php/create_account.php");
-$pathFilesLength=count($pathFiles);
-for($i=0; $i<$pathFilesLength; $i++){
-    if (!file_exists($pathFiles[$i])){
-        echo "File not found! ". $pathFiles[$i];
+$pathFiles = array("./php/Subject.php", "./php/create_account.php");
+$pathFilesLength = count($pathFiles);
+for ($i = 0; $i < $pathFilesLength; $i++) {
+    if (!file_exists($pathFiles[$i])) {
+        echo "File not found! " . $pathFiles[$i];
         exit();
     }
 }
@@ -46,11 +46,73 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parolame</title>
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/game.css">
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/game.js" defer></script>
 </head>
 
 <body>
-
+    <header>
+        <nav></nav>
+    </header>
+    <main>
+        <game>
+            <game-box>
+                <letter data-row="1"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="1"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="1"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="1"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="1"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="1"></letter>
+            </game-box>
+            <game-box data-row="2">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="2">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="2">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="2">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="2">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="2">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="3">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="3">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="3">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="3">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="3">
+                <letter></letter>
+            </game-box>
+            <game-box data-row="3">
+                <letter></letter>
+            </game-box>
+        </game>
+    </main>
 </body>
 
 </html>
