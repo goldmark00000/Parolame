@@ -5,29 +5,29 @@
             $date = getdate($_SERVER["REQUEST_TIME"]);
             $subject="";
             switch ($date["wday"]) {
-                case 1:
+                case 0:
                     $subject="matematica";
                     break;
-                case 2:
+                case 1:
                     $subject="italiano";
                     break;
-                case 3:
+                case 2:
                     $subject="geografia";
                     break;
-                case 4:
+                case 3:
                     $subject="storia";
                     break;
-                case 5:
+                case 4:
                     $subject="informatica";
                     break;
-                case 6:
+                case 5:
                     $subject="diritto";
                     break;
-                case 7:
+                case 6:
                     $subject="economia aziendale";
                     break;
-                    default:
-                        throw new Exception("Not a day of the week");
+                default:
+                    throw new Exception("Not a day of the week");
                     return;
             }
             return $subject;
