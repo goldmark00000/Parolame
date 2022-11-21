@@ -38,24 +38,38 @@ try {
 
 ?>
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parolame</title>
+    <link rel="stylesheet" href="./styles/palette.css">
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/game.css">
     <script src="./scripts/index.js" defer></script>
-    <script src="./scripts/game.js" defer></script>
+    <!-- <script src="./scripts/game.js" defer></script> -->
 </head>
 
 <body>
     <header>
-        <nav></nav>
+        <nav>
+            <span class="" id="idPlayer"></span>
+            <span class="nav-btn stats">
+                stats
+            </span>
+            <span class="nav-btn rules">
+                rules
+            </span>
+        </nav>
     </header>
     <main>
+        <div class="rules-container">
+            <p>
+
+            </p>
+        </div>
         <game>
             <game-box>
                 <letter data-row="1"></letter>
@@ -75,41 +89,41 @@ try {
             <game-box>
                 <letter data-row="1"></letter>
             </game-box>
-            <game-box data-row="2">
-                <letter></letter>
+            <game-box>
+                <letter data-row="2"></letter>
             </game-box>
-            <game-box data-row="2">
-                <letter></letter>
+            <game-box>
+                <letter data-row="2"></letter>
             </game-box>
-            <game-box data-row="2">
-                <letter></letter>
+            <game-box>
+                <letter data-row="2"></letter>
             </game-box>
-            <game-box data-row="2">
-                <letter></letter>
+            <game-box>
+                <letter data-row="2"></letter>
             </game-box>
-            <game-box data-row="2">
-                <letter></letter>
+            <game-box>
+                <letter data-row="2"></letter>
             </game-box>
-            <game-box data-row="2">
-                <letter></letter>
+            <game-box>
+                <letter data-row="2"></letter>
             </game-box>
-            <game-box data-row="3">
-                <letter></letter>
+            <game-box>
+                <letter data-row="3"></letter>
             </game-box>
-            <game-box data-row="3">
-                <letter></letter>
+            <game-box>
+                <letter data-row="3"></letter>
             </game-box>
-            <game-box data-row="3">
-                <letter></letter>
+            <game-box>
+                <letter data-row="3"></letter>
             </game-box>
-            <game-box data-row="3">
-                <letter></letter>
+            <game-box>
+                <letter data-row="3"></letter>
             </game-box>
-            <game-box data-row="3">
-                <letter></letter>
+            <game-box>
+                <letter data-row="3"></letter>
             </game-box>
-            <game-box data-row="3">
-                <letter></letter>
+            <game-box>
+                <letter data-row="3"></letter>
             </game-box>
         </game>
     </main>

@@ -28,9 +28,9 @@
                         <input type="password" class="password-user" id="passwordUser"></input>
                     </span>
                 </div>
-                <span class="buttons-space">
-                    <button class="login-button cancel-button">Cancel</button>
-                    <button class="login-button confirm-button">Confirm</button>
+                <span class="btns-space">
+                    <button class="login-btn cancel-btn">Cancel</button>
+                    <button class="login-btn confirm-btn">Confirm</button>
                 </span>
             </div>
             <p class="link-create-acc">Vuoi creare un nuovo account?</p>
