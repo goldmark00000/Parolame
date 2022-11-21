@@ -126,6 +126,9 @@ try {
                 <letter data-row="3"></letter>
             </game-box>
         </game>
+        <div>
+            <button class="confirm-btn" id="confirm">Confirm</button>
+        </div>
     </main>
 </body>
 

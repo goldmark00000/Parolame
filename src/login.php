@@ -33,7 +33,7 @@
                     <button class="login-btn confirm-btn">Confirm</button>
                 </span>
             </div>
-            <p class="link-create-acc">Vuoi creare un nuovo account?</p>
+            <p class="link-create-acc">Do you want create a new account?</p>
         </div>
     </div>
 </body>

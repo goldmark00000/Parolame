@@ -37,3 +37,7 @@ main{
     display: grid;
     place-items: center;
 }
+
+.rules-container{
+    position: absolute;
+}
