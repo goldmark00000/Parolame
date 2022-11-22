@@ -32,12 +32,32 @@ nav {
 }
 
 main{
-    height: 90vh;
+    height: calc(100vh - 3em);
     width: 100%;
     display: grid;
     place-items: center;
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: center; */
 }
 
 .rules-container{
     position: absolute;
+}
+
+.confirm-btn{
+    height: 2em;
+    width: 5em;
+    font-size: 1.5rem;
+    color: #000;
+    border: 1px solid #000;
+    background-color: #fff;
+    border-radius: 0.4em;
+    cursor: pointer;
+}
+
+.logo{
+    color: #fff;
+    height: 10em;
+    width: 30em;
 }

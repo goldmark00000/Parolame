@@ -49,7 +49,7 @@ try {
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/game.css">
     <script src="./scripts/index.js" defer></script>
-    <!-- <script src="./scripts/game.js" defer></script> -->
+    <script src="./scripts/game.js" defer></script>
 </head>
 
 <body>
@@ -70,6 +70,7 @@ try {
 
             </p>
         </div>
+        <img class="logo" src="./img/parolame_logo.jpg" alt="Parolame logo">
         <game>
             <game-box>
                 <letter data-row="1"></letter>
@@ -124,6 +125,24 @@ try {
             </game-box>
             <game-box>
                 <letter data-row="3"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="4"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="4"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="4"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="4"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="4"></letter>
+            </game-box>
+            <game-box>
+                <letter data-row="4"></letter>
             </game-box>
         </game>
         <div>

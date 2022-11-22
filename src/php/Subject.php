@@ -1,5 +1,4 @@
 <?php
-
     class Subject{
         public function getSubject(){
             $date = getdate($_SERVER["REQUEST_TIME"]);
@@ -33,5 +32,4 @@
             return $subject;
         }
     }
-
 ?>
