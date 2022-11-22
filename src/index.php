@@ -26,6 +26,7 @@ $subject;
 try {
     $sbj = new Subject();
     $subject = $sbj->getSubject();
+
 } catch (Exception $e) {
     echo $e;
     exit();
@@ -71,6 +72,7 @@ try {
             </p>
         </div>
         <img class="logo" src="./img/logo.png" alt="Parolame logo">
+        <p class="materia" id="idMateria"></p>
         <game>
             <game-box>
                 <letter data-row="1"></letter>
