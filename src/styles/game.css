@@ -13,12 +13,14 @@ game{
 
 game-box{
     grid-column: span 1;
-    background-color: green;
+    background-color: var(--gray-dark);
+    outline: 1px solid #fff;
 }
 
 letter{
     color: #fff;
     font-size: 1.2rem;
+    font-weight: bold;
     width: 100%;
     height: 100%;
     display: flex;
