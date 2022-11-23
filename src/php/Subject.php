@@ -26,8 +26,7 @@
                     $subject="economia aziendale";
                     break;
                 default:
-                    throw new Exception("Not a day of the week");
-                    return;
+                return throw new Exception("Not a day of the week");
             }
             return $subject;
         }
