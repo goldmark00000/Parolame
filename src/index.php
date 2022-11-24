@@ -26,7 +26,6 @@ $subject;
 try {
     $sbj = new Subject();
     $subject = $sbj->getSubject();
-
 } catch (Exception $e) {
     echo $e;
     exit();

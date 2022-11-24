@@ -9,10 +9,10 @@
                     break;
                 case 1:
                     $subject="italiano";
-                    break;
+                break;
                 case 2:
                     $subject="geografia";
-                    break;
+                break;
                 case 3:
                     $subject="storia";
                     break;
@@ -31,4 +31,3 @@
             return $subject;
         }
     }
-?>

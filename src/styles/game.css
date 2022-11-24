@@ -1,9 +1,9 @@
-:root{
+:root {
     --game-height: 16em;
     --game-width: 24em;
 }
 
-game{
+game {
     height: var(--game-height);
     width: var(--game-width);
     display: grid;
@@ -11,7 +11,7 @@ game{
     gap: 0.5em;
 }
 
-game-box{
+game-box {
     height: 3.5em;
     width: 3.5em;
     grid-column: span 1;
@@ -19,7 +19,7 @@ game-box{
     outline: 1px solid #fff;
 }
 
-letter{
+letter {
     color: #fff;
     font-size: 2rem;
     font-weight: bold;
