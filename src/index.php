@@ -10,7 +10,6 @@ for ($i = 0; $i < $pathFilesLength; $i++) {
 
 
 
-
 // if (!isset($_COOKIE["ID_user"])) {
 //     echo "sei nuovo";
 //     $name = "ID_user";
