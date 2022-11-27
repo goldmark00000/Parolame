@@ -1,82 +1,83 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>⌵-->
 <html lang="en">
 	<head>
 		<title>Parolame</title>
 		<meta charset="UTF-8">
-		<!--<meta charset="UTF-8">                                                      ??
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">                           ??
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">          ??-->  
 		<link href="index.css" rel="stylesheet" type="text/css">
 		<script language="javascript" src="index.js"></script>
 	</head>
 	<body>
 		<form>
-			<center>
-				<div id="blur">
-					<div id="header">
-						<img src="img/title.png" id="img_title">
-						<!--<img id="	" onclick="	()">-->
-					</div>
-					<div id="boxes">
-						<table border="0" cellspacing="3">
-							<tr>
-								<th><input autocomplete="off" class="box" type="text" id="1" maxlength="1" onkeyup="Jump_to_box(this)" autofocus>
-								<th><input autocomplete="off" class="box" type="text" id="2" maxlength="1" onkeyup="Jump_to_box(this)">
-								<th><input autocomplete="off" class="box" type="text" id="3" maxlength="1" onkeyup="Jump_to_box(this)">
-								<th><input autocomplete="off" class="box" type="text" id="4" maxlength="1" onkeyup="Jump_to_box(this)">
-								<th><input autocomplete="off" class="box" type="text" id="5" maxlength="1" onkeyup="Jump_to_confirm(this)">
-							</tr>
-							<tr>
-								<th><input autocomplete="off" class="box" type="text" id="6" maxlength="1" onkeyup="Jump_to_box(this)" autofocus>
-								<th><input autocomplete="off" class="box" type="text" id="7" maxlength="1" onkeyup="Jump_to_box(this)">
-								<th><input autocomplete="off" class="box" type="text" id="8" maxlength="1" onkeyup="Jump_to_box(this)">
-								<th><input autocomplete="off" class="box" type="text" id="9" maxlength="1" onkeyup="Jump_to_box(this)">
-								<th><input autocomplete="off" class="box" type="text" id="10" maxlength="1" onkeyup="Jump_to_confirm(this)">
-							</tr>
-							<tr>
-								<th><input autocomplete="off" class="box" type="text" id="11" maxlength="1" onkeyup="Jump_to_box(this)" autofocus>
-								<th><input autocomplete="off" class="box" type="text" id="12" maxlength="1" onkeyup="Jump_to_box(this)">
-								<th><input autocomplete="off" class="box" type="text" id="13" maxlength="1" onkeyup="Jump_to_box(this)">
-								<th><input autocomplete="off" class="box" type="text" id="14" maxlength="1" onkeyup="Jump_to_box(this)">
-								<th><input autocomplete="off" class="box" type="text" id="15" maxlength="1" onkeyup="Jump_to_confirm(this)">
-							</tr>
-							<tr>
-								<th>
-								<th>
-								<th>
-								<th>
-								<th>
-							</tr>
-							<tr>
-								<th>
-								<th>
-								<th>
-								<th>
-								<th>
-							</tr>
-							<tr>
-								<th>
-								<th>
-								<th>
-								<th>
-								<th>
-							</tr>
-						</table>
-					</div>
-					<br>
-					<button type="button" onclick="Confirm()" id="confirm"><span>Conferma</span></button>
+			<div id="settings_interface">
+				<ul>
+					<li id="first_part" onclick="Settings()">
+						<ul>
+							<li>
+								<p class="bar_text" id="date">01/01/2000
+								<p class="bar_text" id="player_id">player id
+								<p class="bar_text" id="score">Score: 0</p>
+								<span class="bar_text"> &nbsp &nbsp &nbsp </span>
+								<img src="img/settings_icon.png" id="settings_icon">
+							</li>
+						</ul>
+					</li>
+					<li id="second_part">
+						<ul>
+							<li>
+								<ul>
+									<li id="words_select1" onclick="Words_select()">Change word length ﹀</li>
+									<li id="words_select2">
+										<span>
+											<fieldset>
+												<legend>Scegli la lunghezza della parola</legend>
+												<input type="radio" name="word_lenght" id="lenght4" onclick="Upadate_parolame(4)"><label for="lenght4">4 lettere</label>&nbsp
+												<input type="radio" name="word_lenght" id="lenght5" onclick="Upadate_parolame(5)" checked><label for="lenght5">5 lettere</label>&nbsp
+												<input type="radio" name="word_lenght" id="lenght6" onclick="Upadate_parolame(6)"><label for="lenght6">6 lettere</label>&nbsp
+												<input type="radio" name="word_lenght" id="lenght7" onclick="Upadate_parolame(7)"><label for="lenght7">7 lettere</label>&nbsp
+											</fieldset>
+										</span>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li id="access1" onclick="Access()">User access ﹀</li>
+									<li id="access2"><span>User access??</span></li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li id="info1" onclick="Info()">Info ﹀</li>
+									<li id="info2">
+										<fieldset>
+											<legend>Come si gioca</legend>
+											<p>Hai a disposizione 6 tentativi per indovinare la parola segreta. Se indovini la posizione esatta di una delle sue lettere la corrispettiva casella si colorerà di verde, se invece la lettera è corretta ma la sua posizione errata la casella si colorerà di giallo. Al termine dei tentativi se non avrai indovinato la parola ti apparirà a schermo la soluzione e potrai ritentare. Puoi anche scegliere la lunghezza delle parole da indovinare nella sezione -Change word lenght-.
+										</fieldset>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="emptyspace"></div>
+			<center id="game_body">
+				<div id="header">
+					<img src="img/title.png" id="img_title">
 				</div>
-				<!--<img id="lose" src="lose.png" onclick="location.reload()" width="100%">
-				<img id="win" src="win.png" onclick="location.reload()" width="100%">
-				<div class="module">
-					<div class="textual_title">
-						<h4>REGOLE</h4>
-						<button class="exit_button" onclick="chiusura()">&times;</button>
-					</div>
-					<div class="text"> 
-						Hai a disposizione 6 tentativi per indovinare la parola segreta. Se indovini la posizione esatta di una delle sue lettere la corrispettiva casella si colorerà di verde, se invece la lettera è corretta ma la sua posizione errata la casella si colorerà di giallo. Al termine dei tentativi se non avrai indovinato la parola ti apparirà a schermo la soluzione e potrai ritentare. Sono attualmente presenti 57 parole diverse tra cui riferiemti letterari e storici.
-					</div>
-				</div>-->
+				<div id="boxes">
+					<table id="table"></table>
+				</div>
+				<br>
+				<br>
+				<button type="button" onclick="Confirm()" id="confirm"><span>Conferma</span></button>
+			</center>
+			<center>
+				<div id="game_over"  onclick="Clean()">
+					<img id="lose" src="img/keep_calm_and_hai_perso.png">
+					<img id="win" src="img/keep_calm_and_hai_vinto.png">
+					<input type="button" id="clean" onclick="Clean()">
+				</div>
 			</center>
 		</form>
 	</body>
