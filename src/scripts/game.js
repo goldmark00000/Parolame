@@ -23,10 +23,11 @@ addEventListener("keydown", ({ key, keyCode }) => {
     letters[c].textContent = "";
     return;
   }
-  for (let i = 0; i < tagLength; i++) {
-    if (letters[i].textContent === "") {
-      letters[i].textContent = key;
-      return;
+  if (keyCode >= 65 && keyCode <= 90)
+    for (let i = 0; i < tagLength; i++) {
+      if (letters[i].textContent === "") {
+        letters[i].textContent = key;
+        return;
+      }
     }
-  }
 });

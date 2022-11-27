@@ -70,7 +70,7 @@ try {
         </div>
         <img class="logo" src="./img/logo.png" alt="Parolame logo">
         <p class="materia" id="idMateria"></p>
-        <game>
+        <game id="gameBoard">
             <game-box>
                 <letter data-row="1"></letter>
             </game-box>
