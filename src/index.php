@@ -16,7 +16,6 @@ for ($i = 0; $i < $pathFilesLength; $i++) {
 //     $value = "fff123";
 //     setcookie($name, $value);
 //     // header("Location: http://localhost/Parolame/src/php/create_account.php");
-//     exit();
 // }
 
 require_once("./php/Subject.php");
