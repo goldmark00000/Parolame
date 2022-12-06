@@ -1,5 +1,5 @@
 <?php
-$pathFiles = array("./php/Subject.php", "./php/create_account.php");
+$pathFiles = array("../lib/php/Subject.php", "../lib/php/create_account.php");
 $pathFilesLength = count($pathFiles);
 for ($i = 0; $i < $pathFilesLength; $i++) {
     if (!file_exists($pathFiles[$i])) {
@@ -8,17 +8,7 @@ for ($i = 0; $i < $pathFilesLength; $i++) {
     }
 }
 
-
-
-// if (!isset($_COOKIE["ID_user"])) {
-//     echo "sei nuovo";
-//     $name = "ID_user";
-//     $value = "fff123";
-//     setcookie($name, $value);
-//     // header("Location: http://localhost/Parolame/src/php/create_account.php");
-// }
-
-require_once("./php/Subject.php");
+require_once($pathFiles[0]);
 $subject;
 try {
     $sbj = new Subject();
@@ -27,10 +17,6 @@ try {
     echo $e;
     exit();
 }
-
-
-
-
 
 ?>
 <!DOCTYPE html>
