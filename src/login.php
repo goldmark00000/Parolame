@@ -1,6 +1,5 @@
 <?php
-
-
+require_once("../lib/php/Loginscript.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

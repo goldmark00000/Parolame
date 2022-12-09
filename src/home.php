@@ -1,23 +1,5 @@
 <?php
-$pathFiles = array("../lib/php/Subject.php", "../lib/php/create_account.php");
-$pathFilesLength = count($pathFiles);
-for ($i = 0; $i < $pathFilesLength; $i++) {
-    if (!file_exists($pathFiles[$i])) {
-        echo "File not found! " . $pathFiles[$i];
-        exit();
-    }
-}
-
-require_once($pathFiles[0]);
-$subject;
-try {
-    $sbj = new Subject();
-    $subject = $sbj->getSubject();
-} catch (Exception $e) {
-    echo $e;
-    exit();
-}
-
+require_once("../lib/php/Homescript.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
