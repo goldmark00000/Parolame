@@ -37,5 +37,4 @@ require_once("../lib/php/Loginscript.php");
     </div>
   </div>
 </body>
-
 </html>
