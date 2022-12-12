@@ -115,5 +115,4 @@ require_once("../lib/php/Homescript.php");
     </div>
   </main>
 </body>
-
 </html>
