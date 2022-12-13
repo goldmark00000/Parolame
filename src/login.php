@@ -13,7 +13,6 @@ require_once("../lib/php/Loginscript.php");
   <script src="./scripts/login.js" defer></script>
   <title>Parolame</title>
 </head>
-
 <body>
   <div class="background">
     <div class="login-container">
