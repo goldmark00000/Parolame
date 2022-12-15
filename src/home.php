@@ -55,60 +55,6 @@ require_once("../lib/php/Homescript.php");
       <game-box>
         <letter data-row="1"></letter>
       </game-box>
-      <game-box>
-        <letter data-row="2"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="2"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="2"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="2"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="2"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="2"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="3"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="3"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="3"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="3"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="3"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="3"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="4"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="4"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="4"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="4"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="4"></letter>
-      </game-box>
-      <game-box>
-        <letter data-row="4"></letter>
-      </game-box>
     </game>
     <div>
       <button class="confirm-btn" id="confirm">Confirm</button>
