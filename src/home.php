@@ -1,5 +1,5 @@
 <?php
-require_once("../lib/php/Homescript.php");
+require_once("./lib/php/Homescript.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
