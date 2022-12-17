@@ -15,7 +15,6 @@ require_once("./lib/php/Homescript.php");
   <script src="./scripts/index.js" defer></script>
   <script src="./scripts/game.js" defer></script>
 </head>
-
 <body>
   <header>
     <nav>
