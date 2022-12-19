@@ -12,7 +12,7 @@ body {
   width: 100vw;
 }
 
-.login-container {
+.new-account-container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ body {
   width: 20em;
   background-color: var(--gray-dark);
   border-radius: 1em;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 37px 24px #8F8F8F; 
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 37px 24px #8F8F8F;
   box-shadow: 0px 10px 13px -7px #000000, 0px 0px 37px 24px #8F8F8F;
 }
 
@@ -73,7 +73,7 @@ body {
   width: 100%;
 }
 
-.link-create-acc {
+.link-login-acc {
   color: #ffffff;
   text-decoration: none;
   margin: 1em 0 1em 0;
@@ -85,15 +85,15 @@ body {
   width: 12em;
 }
 
-.label-id-user {
+.label-password-user {
   width: 5.5em;
 }
 
-.label-password-user {
-  width: 4.3em;
+.label-confirm-password-user {
+  width: 8em;
 }
 
-.login-btn {
+.new-account-btn {
   font-size: 1.2rem;
   border-radius: 0.2em;
   border: transparent;

@@ -1,6 +1,3 @@
-<?php
-require_once("../lib/php/Loginscript.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +15,11 @@ require_once("../lib/php/Loginscript.php");
       <div class="elements-container">
         <div class="text-container">
           <span class="text-input">
-            <label for="idUser" class="for-id-user">ID utente:</label>
+            <label for="idUser" class="label-id-user">ID utente:</label>
             <input type="text" class="id-user" id="idUser"></input>
           </span>
           <span class="text-input">
-            <label for="passwordUser" class="for-password-user">Password:</label>
+            <label for="passwordUser" class="label-password-user">Password:</label>
             <input type="password" class="password-user" id="passwordUser"></input>
           </span>
         </div>
@@ -31,7 +28,7 @@ require_once("../lib/php/Loginscript.php");
           <button class="login-btn confirm-btn">Confirm</button>
         </span>
       </div>
-      <p class="link-create-acc">Do you want create a new account?</p>
+      <a href="./newaccount.php" class="link-create-acc">Do you want create a new account?</a>
     </div>
   </div>
 </body>

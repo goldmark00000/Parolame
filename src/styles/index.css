@@ -36,6 +36,7 @@ main{
     width: 100%;
     display: grid;
     place-items: center;
+    gap: 0;
     /* flex-direction: column;
     align-items: center;
     justify-content: center; */
@@ -43,6 +44,27 @@ main{
 
 .rules-container{
     position: absolute;
+    height: auto;
+}
+
+.wrap-text{
+    width: 80%;
+    height: auto;
+    overflow-wrap: break-word;
+}
+
+.materia{
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0.5em 0 0.5em 0;
+}
+
+.materia-text{
+    font-size: 2rem;
+    color: #ffe600;
+    font-weight: bolder;
 }
 
 .confirm-btn{
@@ -54,6 +76,7 @@ main{
     background-color: #fff;
     border-radius: 0.4em;
     cursor: pointer;
+    margin: 1em 0 1em 0;
 }
 
 .logo{

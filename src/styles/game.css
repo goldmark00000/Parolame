@@ -1,13 +1,14 @@
 :root {
-    --game-height: 16em;
-    --game-width: 24em;
+    --game-height: auto;
+    --game-width: 19.5em;
 }
+
 
 game {
     height: var(--game-height);
     width: var(--game-width);
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 0.5em;
 }
 
@@ -29,4 +30,13 @@ letter {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.letters-used{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5em;
+    margin: 0 0 1em 0;
 }
