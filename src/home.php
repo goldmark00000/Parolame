@@ -33,7 +33,7 @@ require_once("../lib/php/Homescript.php");
   <main>
     <div class="rules-container">
       <p class="wrap-text">
-
+        <!-- Insert the rules -->
       </p>
     </div>
     <img class="logo" src="./img/logo.png" alt="Parolame logo">
