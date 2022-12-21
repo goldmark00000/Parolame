@@ -1,6 +1,6 @@
 :root {
     --game-height: auto;
-    --game-width: 19.5em;
+    --game-width: 14.5em;
 }
 
 
@@ -13,8 +13,8 @@ game {
 }
 
 game-box {
-    height: 3.5em;
-    width: 3.5em;
+    height: 2.5em;
+    width: 2.5em;
     grid-column: span 1;
     background-color: var(--gray-dark);
     outline: 1px solid #fff;
@@ -22,7 +22,7 @@ game-box {
 
 letter {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     width: 100%;
@@ -39,4 +39,5 @@ letter {
     flex-direction: column;
     gap: 0.5em;
     margin: 0 0 1em 0;
+    color: #fff;
 }

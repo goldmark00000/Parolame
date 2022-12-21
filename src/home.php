@@ -22,6 +22,10 @@ require_once("../lib/php/Homescript.php");
   <header>
     <nav>
       <span class="" id="idPlayer"></span>
+      <span class="nav-btn">
+        Mode:
+        <span class="change-mode" id="changeModeBtn">easy</span>
+      </span>
       <span class="nav-btn stats" id="statsBtn">
         stats
       </span>
@@ -36,7 +40,7 @@ require_once("../lib/php/Homescript.php");
         <!-- Insert the rules -->
       </p>
     </div>
-    <img class="logo" src="./img/logo.png" alt="Parolame logo">
+    <img class="logo" src="./img/logo.png" alt="Parolame">
     <p class="materia" id="idMateria">The subject of today is
       <span class="materia-text"><?php
                                   require_once($pathFiles[0]);
@@ -51,59 +55,7 @@ require_once("../lib/php/Homescript.php");
                                   echo $subject;
                                   ?></span>
     </p>
-    <div class="letters-used">
-      <game id="gameBoard lettersMissed">
-        <game-box>
-          <letter data-missed-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-letter></letter>
-        </game-box>
-      </game>
-      <game id="gameBoard lettersSpotMissed">
-        <game-box>
-          <letter data-missed-spot-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-spot-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-spot-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-spot-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-spot-letter></letter>
-        </game-box>
-      </game>
-      <game id="gameBoard lettersRights">
-        <game-box>
-          <letter data-right-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-right-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-right-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-right-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-right-letter></letter>
-        </game-box>
-      </game>
-    </div>
+    <span class="attempts">Remain attempts: <span id="nAttemptsRemaing">0</span></span>
     <game id="gameBoard">
       <game-box>
         <letter data-letter-input></letter>
@@ -122,7 +74,63 @@ require_once("../lib/php/Homescript.php");
       </game-box>
     </game>
     <div>
-      <button class="confirm-btn" id="confirm">Confirm</button>
+      <button class="confirm-btn" id="confirmWord">Confirm</button>
+    </div>
+    <div class="letters-used">
+      Letters in the right place:
+      <game id="gameBoard lettersRights">
+        <game-box>
+          <letter data-right-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-right-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-right-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-right-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-right-letter></letter>
+        </game-box>
+      </game>
+      Letters in the wrong spot:
+      <game id="gameBoard lettersWrongSpot">
+        <game-box>
+          <letter data-wrong-spot-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-wrong-spot-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-wrong-spot-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-wrong-spot-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-wrong-spot-letter></letter>
+        </game-box>
+      </game>
+      Missing letters:
+      <game id="gameBoard lettersMissed">
+        <game-box>
+          <letter data-missed-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-missed-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-missed-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-missed-letter></letter>
+        </game-box>
+        <game-box>
+          <letter data-missed-letter></letter>
+        </game-box>
+      </game>
     </div>
   </main>
   <div class="cookie-background">

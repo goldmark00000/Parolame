@@ -14,7 +14,7 @@ addEventListener("keydown", ({ key, keyCode }) => {
   if (keyCode === 8) {
     let c;
     for (let i = 0; i < tagLength; i++) {
-      if (letters[i].textContent === "") {
+      if (letters[i].textContent === "" /*&& i!==0*/) {
         letters[i - 1].textContent = "";
         return;
       }

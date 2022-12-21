@@ -11,6 +11,7 @@
 </head>
 <body>
   <div class="background">
+    <img class="logo" src="./img/logo.png" alt="Parolame">
     <div class="login-container">
       <div class="elements-container">
         <div class="text-container">
