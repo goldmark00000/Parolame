@@ -146,6 +146,7 @@ require_once("../lib/php/Homescript.php");
       <div class="cookie-text-space">
         <span class="cookie-text">
           cookie text
+          
         </span>
       </div>
       <div class="cookie-btn-space">
