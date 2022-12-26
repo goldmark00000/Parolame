@@ -23,6 +23,9 @@
             <label for="confirmPassword" class="label-confirm-password-user">Confirm password:</label>
             <input type="password" class="confirm-password-user" id="confirmPassword"></input>
           </span>
+          <span>
+            Your ID: <span class="id-player" id="idPlayerShow"></span>
+          </span>
         </div>
         <span class="btns-space">
           <button class="new-account-btn cancel-btn">Cancel</button>
