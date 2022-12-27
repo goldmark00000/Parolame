@@ -107,3 +107,13 @@ body {
   background-color: #ffffff;
   cursor: pointer;
 }
+
+.id-player-container{
+  display: none;
+  color: #ffffff;
+}
+
+.id-player-display{
+  color: var(--yellow);
+  font-weight: bold;
+}

@@ -16,8 +16,8 @@ changeMode.addEventListener("click", () => {
 });
 
 confirmBtn.addEventListener("click", () => {
-  if (localStorage.getItem("cookieBlocker") == 0) {
-    return alert("you not accept the cookies");
+  if (localStorage.getItem("cookieBlocker") != 1) {
+    return alert("You DIDN'T ACCEPT the cookies");
   }
   if (document.querySelector("#nAttemptsRemaing").value == 0) {
     return alert("Out of attempts");

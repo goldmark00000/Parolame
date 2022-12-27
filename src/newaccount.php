@@ -15,16 +15,16 @@
     <div class="new-account-container">
       <div class="elements-container">
         <div class="text-container">
-          <span class="text-input">
+          <span class="text-input" id="displayPassword">
             <label for="password" class="label-password-user">Password:</label>
             <input type="password" class="password-user" id="password"></input>
           </span>
-          <span class="text-input">
+          <span class="text-input" id="displayConfirmPassword">
             <label for="confirmPassword" class="label-confirm-password-user">Confirm password:</label>
             <input type="password" class="confirm-password-user" id="confirmPassword"></input>
           </span>
-          <span>
-            Your ID: <span class="id-player" id="idPlayerShow"></span>
+          <span class="id-player-container">
+            Your ID:<br><span class="id-player-display" id="idPlayerShow"></span>
           </span>
         </div>
         <span class="btns-space">
