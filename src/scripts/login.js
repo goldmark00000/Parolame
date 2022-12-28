@@ -11,7 +11,7 @@ confirmBtn.addEventListener("click", () => {
   const ID = idInput.value;
   const password = passwordInput.value;
   const httpReq = new XMLHttpRequest();
-  let parameters = `Id=${ID}&Password=${password}`;
+  let parameters = `IdUser=${ID}&Password=${password}`;
   
   httpReq.onload = () => {
     if(this.responseText==true){

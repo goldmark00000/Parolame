@@ -19,21 +19,22 @@ confirmBtn.addEventListener("click", () => {
   if (localStorage.getItem("cookieBlocker") != 1) {
     return alert("You DIDN'T ACCEPT the cookies");
   }
-  if (document.querySelector("#nAttemptsRemaing").value == 0) {
+  if (document.querySelector("#nAttemptsRemaing").textContent == 0) {
     return alert("Out of attempts");
   }
   const lettersBox = document.querySelectorAll("letter[data-letter-input]");
   const lengthLetters = lettersBox.length;
   const lengthWord = lengthLetters / 2;
-  let checkWord;
-  for (let i = lengthWord - 1; i < lengthWord; i++) {
-    if (lettersBox[i].value === "") {
+  let checkTheWord;
+  for (let i = lengthWord; i < lengthWord; i++) {
+    if (lettersBox[i].textContent === "") {
       return alert("You don't write in all input squares");
     }
-    checkWord += lettersBox[i].value;
+    checkTheWord += lettersBox[i].textContent;
   }
   const httpReq = new XMLHttpRequest();
-  let parameters = `checkWord=${checkWord}`;
+  let parameters = `checkWord=${checkTheWord}`;
+  console.log(parameters);
   httpReq.onload = () => {
     const response = JSON.parse(this.responseText);
     //////////////////////////////////
@@ -41,7 +42,7 @@ confirmBtn.addEventListener("click", () => {
 
     //////////////////////////////////
   };
-  httpReq.open("POST", "../src/newaccountref.php");
+  httpReq.open("POST", "../src/checkwordref.php");
   httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   httpReq.send(parameters);
 });
