@@ -40,6 +40,7 @@ confirmBtn.addEventListener("click", () => {
     //////////////////////////////////
     console.log(response);
 
+    
     //////////////////////////////////
   };
   httpReq.open("POST", "../src/checkwordref.php");
