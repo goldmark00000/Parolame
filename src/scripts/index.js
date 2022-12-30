@@ -13,6 +13,8 @@ rulesBtn.addEventListener("click", () => {
 
 changeMode.addEventListener("click", () => {
   console.log("change mode");
+  // NORMAL MODE
+  // HARD MODE
 });
 
 confirmBtn.addEventListener("click", () => {
