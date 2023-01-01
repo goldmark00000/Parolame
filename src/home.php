@@ -44,7 +44,7 @@ require_once("./lib/php/Homescript.php");
   <main>
     <div class="rules-container">
       <p class="wrap-text">
-        <!-- Insert the rules -->
+        <!-- Insert the rules  -->
       </p>
     </div>
     <img class="logo" src="./src/img/logo.png" alt="Parolame">
