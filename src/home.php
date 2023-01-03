@@ -21,11 +21,11 @@ require_once("./lib/php/Homescript.php");
 <body>
   <header>
     <div class="no" id="fakeInputLetters">
-    <letter data-letter-input></letter>
-    <letter data-letter-input></letter>
-    <letter data-letter-input></letter>
-    <letter data-letter-input></letter>
-    <letter data-letter-input></letter>
+      <letter data-letter-input></letter>
+      <letter data-letter-input></letter>
+      <letter data-letter-input></letter>
+      <letter data-letter-input></letter>
+      <letter data-letter-input></letter>
     </div>
     <nav>
       <span class="" id="idPlayer"></span>
@@ -62,7 +62,9 @@ require_once("./lib/php/Homescript.php");
                                   echo $subject;
                                   ?></span>
     </p>
-    <span class="attempts">Remain attempts: <span id="nAttemptsRemaing">0</span></span>
+    <span class="attempts">Remain attempts: <span id="nAttemptsRemaing"><?php
+                                                                        echo $userAttempts;
+                                                                        ?></span></span>
     <game id="gameBoard">
       <game-box>
         <letter data-letter-input></letter>
@@ -146,7 +148,7 @@ require_once("./lib/php/Homescript.php");
       <div class="cookie-text-space">
         <span class="cookie-text">
           <!-- /////////////////////////////////// -->
-          
+
         </span>
       </div>
       <div class="cookie-btn-space">

@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/styles/palette.css">
-  <link rel="stylesheet" href="./src/styles/newaccount.css">
-  <script src="./src/scripts/newaccount.js" defer></script>
+  <link rel="stylesheet" href="./styles/palette.css">
+  <link rel="stylesheet" href="./styles/newaccount.css">
+  <script src="./scripts/newaccount.js" defer></script>
   <title>Parolame</title>
 </head>
 <body>
   <div class="background">
-  <img class="logo" src="./src/img/logo.png" alt="Parolame">
+  <img class="logo" src="./img/logo.png" alt="Parolame">
     <div class="new-account-container">
       <div class="elements-container">
         <div class="text-container">
@@ -32,7 +32,7 @@
           <button class="new-account-btn confirm-btn">Confirm</button>
         </span>
       </div>
-      <a href="./src/login.php" class="link-login-acc">Have you an account and do you want log in?</a>
+      <a href="./login.php" class="link-login-acc">Have you an account and do you want log in?</a>
     </div>
   </div>
 </body>
