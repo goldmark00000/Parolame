@@ -19,14 +19,14 @@ require_once("./lib/php/Homescript.php");
 </head>
 
 <body>
+  <div class="no" id="fakeInputLetters">
+    <letter data-letter-input></letter>
+    <letter data-letter-input></letter>
+    <letter data-letter-input></letter>
+    <letter data-letter-input></letter>
+    <letter data-letter-input></letter>
+  </div>
   <header>
-    <div class="no" id="fakeInputLetters">
-      <letter data-letter-input></letter>
-      <letter data-letter-input></letter>
-      <letter data-letter-input></letter>
-      <letter data-letter-input></letter>
-      <letter data-letter-input></letter>
-    </div>
     <nav>
       <span class="" id="idPlayer"></span>
       <span class="nav-btn">
