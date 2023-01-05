@@ -64,6 +64,7 @@ require_once("./lib/php/Homescript.php");
     </p>
     <span class="attempts">Remain attempts: <span id="nAttemptsRemaing"><?php
                                                                         echo $userAttempts;
+                                                                        
                                                                         ?></span></span>
     <game id="gameBoard">
       <game-box>
