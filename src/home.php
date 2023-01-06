@@ -1,5 +1,5 @@
 <?php
-require_once("./lib/php/Homescript.php");
+require_once("../lib/php/Homescript.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,13 +8,13 @@ require_once("./lib/php/Homescript.php");
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/styles/palette.css">
-  <link rel="stylesheet" href="./src/styles/index.css">
-  <link rel="stylesheet" href="./src/styles/game.css">
-  <link rel="stylesheet" href="./src/styles/cookie.css">
-  <script src="./src/scripts/cookie.js" defer></script>
-  <script src="./src/scripts/index.js" defer></script>
-  <script src="./src/scripts/game.js" defer></script>
+  <link rel="stylesheet" href="./styles/palette.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/game.css">
+  <link rel="stylesheet" href="./styles/cookie.css">
+  <script src="./scripts/cookie.js" defer></script>
+  <script src="./scripts/index.js" defer></script>
+  <script src="./scripts/game.js" defer></script>
   <title>Parolame</title>
 </head>
 
@@ -47,7 +47,7 @@ require_once("./lib/php/Homescript.php");
         <!-- Insert the rules  -->
       </p>
     </div>
-    <img class="logo" src="./src/img/logo.png" alt="Parolame">
+    <img class="logo" src="./img/logo.png" alt="Parolame">
     <p class="materia" id="idMateria">The subject of today is
       <span class="materia-text"><?php
                                   require_once($pathFiles[0]);
@@ -64,7 +64,6 @@ require_once("./lib/php/Homescript.php");
     </p>
     <span class="attempts">Remain attempts: <span id="nAttemptsRemaing"><?php
                                                                         echo $userAttempts;
-                                                                        
                                                                         ?></span></span>
     <game id="gameBoard">
       <game-box>

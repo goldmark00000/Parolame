@@ -13,8 +13,8 @@ confirmBtn.addEventListener("click", () => {
   const httpReq = new XMLHttpRequest();
   let parameters = `IdUser=${ID}&Password=${password}`;
   
-  httpReq.onload = () => {
-    if(this.responseText==true){
+  httpReq.onload = ({ target }) => {
+    if(target.response==true){
       location.href="../src/home.php";
     }else{
       alert("ID or password incorrect");
