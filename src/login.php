@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/palette.css">
   <link rel="stylesheet" href="./styles/login.css">
+  <link rel="stylesheet" href="./styles/cookie.css">
   <script src="./scripts/login.js" defer></script>
+  <script src="./scripts/cookie.js" defer></script>
   <title>Parolame</title>
 </head>
 <body>
@@ -30,6 +32,21 @@
         </span>
       </div>
       <a href="./newaccount.php" class="link-create-acc">Do you want create a new account?</a>
+    </div>
+  </div>
+  <div class="cookie-background">
+    <div class="cookie-popup">
+      <p class="cookie-title">This site use cookies</p>
+      <div class="cookie-text-space">
+        <span class="cookie-text">
+          <!-- /////////////////////////////////// -->
+
+        </span>
+      </div>
+      <div class="cookie-btn-space">
+        <span class="cookie-btn deny-btn">Deny cookies</span>
+        <span class="cookie-btn accept-btn">Allow cookies</span>
+      </div>
     </div>
   </div>
 </body>
