@@ -35,5 +35,6 @@
       <a href="./login.php" class="link-login-acc">Have you an account and do you want log in?</a>
     </div>
   </div>
+  
 </body>
 </html>
