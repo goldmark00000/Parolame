@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/palette.css">
+  <link rel="stylesheet" href="./styles/cookie.css">
   <link rel="stylesheet" href="./styles/newaccount.css">
+  <script src="./scripts/cookie.js" defer></script>
   <script src="./scripts/newaccount.js" defer></script>
   <title>Parolame</title>
 </head>
@@ -35,7 +37,19 @@
       <a href="./login.php" class="link-login-acc">Have you an account and do you want log in?</a>
     </div>
   </div>
-  
-  
+  <div class="cookie-background">
+    <div class="cookie-popup">
+      <p class="cookie-title">This site use cookies</p>
+      <div class="cookie-text-space">
+        <span class="cookie-text">
+          <!-- /////////////////////////////////// -->
+        </span>
+      </div>
+      <div class="cookie-btn-space">
+        <span class="cookie-btn deny-btn">Deny cookies</span>
+        <span class="cookie-btn accept-btn">Allow cookies</span>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
