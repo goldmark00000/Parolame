@@ -43,6 +43,7 @@
       <div class="cookie-text-space">
         <span class="cookie-text">
           <!-- /////////////////////////////////// -->
+          
         </span>
       </div>
       <div class="cookie-btn-space">
