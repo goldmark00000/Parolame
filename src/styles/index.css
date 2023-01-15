@@ -87,3 +87,7 @@ main{
 .attempts >span{
     color: var(--yellow);
 }
+
+.keyboard{
+    position: absolute;
+}
