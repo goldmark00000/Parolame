@@ -90,8 +90,8 @@ main{
 
 .keyboard{
     position: absolute;
-    
-
-
-    
+    background-color: var(--black-light);
+    width: 100vw;
+    height: 8em;
+    display: flex;
 }
