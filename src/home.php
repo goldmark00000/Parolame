@@ -15,6 +15,7 @@ require_once("../lib/php/Homescript.php");
   <script src="./scripts/cookie.js" defer></script>
   <script src="./scripts/index.js" defer></script>
   <script src="./scripts/game.js" defer></script>
+  <script src="./scripts/keyboard.js" defer></script>
   <title>Parolame</title>
 </head>
 
@@ -28,16 +29,18 @@ require_once("../lib/php/Homescript.php");
   </div>
   <header>
     <nav>
-      <span class="" id="idPlayer"></span>
-      <span class="nav-btn">
-        Mode:
-        <span class="change-mode" id="changeModeBtn">easy</span>
+      <span class="player-id" id="idPlayer">ACCOUNT: <?php echo $userId;?></span>
+      <span class="nav-btn" id="fullChangeModeBtn">
+        Mode: <span class="change-mode" id="changeModeBtn" data-mode="0">normale</span>
       </span>
       <span class="nav-btn stats" id="statsBtn">
         stats
       </span>
       <span class="nav-btn rules" id="rulesBtn">
         rules
+      </span>
+      <span class="nav-btn disconnect" id="disconnectBtn">
+        <img src="./img/arrow.svg" alt="disconnect" loading="lazy">
       </span>
     </nav>
   </header>
@@ -46,10 +49,10 @@ require_once("../lib/php/Homescript.php");
       <p class="wrap-text">
 
         <!-- Insert the rules  -->
-        
+
       </p>
     </div>
-    <img class="logo" src="./img/logo.png" alt="Parolame">
+    <img class="logo" src="./img/logo.png" alt="Parolame" loading="lazy">
     <p class="materia" id="idMateria">The subject of today is
       <span class="materia-text"><?php
                                   require_once($pathFiles[0]);
@@ -67,6 +70,16 @@ require_once("../lib/php/Homescript.php");
     <span class="attempts">Remain attempts: <span id="nAttemptsRemaing"><?php
                                                                         echo $userAttempts;
                                                                         ?></span></span>
+    <script>
+      const userAttempt = document.getElementById("nAttemptsRemaing");
+      if (parseInt(userAttempt.textContent) > 3) {
+        userAttempt.classList.add("green");
+      } else if (parseInt(userAttempt.textContent) > 1) {
+        userAttempt.classList.add("yellow");
+      } else {
+        userAttempt.classList.add("red");
+      };
+    </script>
     <game id="gameBoard">
       <game-box>
         <letter data-letter-input></letter>
@@ -144,12 +157,50 @@ require_once("../lib/php/Homescript.php");
       </game>
     </div>
   </main>
+  <div class="keyboard-box">
+    <div class="keyboard-btn"><img src="./img/triangle.png" alt="tringle" loading="lazy"></div>
+    <div class="keyboard-container">
+      <div class="row">
+        <div class="keys-btn" data-info="q">q</div>
+        <div class="keys-btn" data-info="w">w</div>
+        <div class="keys-btn" data-info="e">e</div>
+        <div class="keys-btn" data-info="r">r</div>
+        <div class="keys-btn" data-info="t">t</div>
+        <div class="keys-btn" data-info="y">y</div>
+        <div class="keys-btn" data-info="u">u</div>
+        <div class="keys-btn" data-info="i">i</div>
+        <div class="keys-btn" data-info="o">o</div>
+        <div class="keys-btn" data-info="p">p</div>
+        <div class="keys-btn canc-btn" data-info="canc"><img src="./img/delete.svg"></div>
+      </div>
+      <div class="row">
+        <div class="keys-btn" data-info="a">a</div>
+        <div class="keys-btn" data-info="s">s</div>
+        <div class="keys-btn" data-info="d">d</div>
+        <div class="keys-btn" data-info="f">f</div>
+        <div class="keys-btn" data-info="g">g</div>
+        <div class="keys-btn" data-info="h">h</div>
+        <div class="keys-btn" data-info="j">j</div>
+        <div class="keys-btn" data-info="k">k</div>
+        <div class="keys-btn" data-info="l">l</div>
+      </div>
+      <div class="row">
+        <div class="keys-btn" data-info="z">z</div>
+        <div class="keys-btn" data-info="x">x</div>
+        <div class="keys-btn" data-info="c">c</div>
+        <div class="keys-btn" data-info="v">v</div>
+        <div class="keys-btn" data-info="b">b</div>
+        <div class="keys-btn" data-info="n">n</div>
+        <div class="keys-btn" data-info="m">m</div>
+      </div>
+    </div>
+  </div>
   <div class="cookie-background">
     <div class="cookie-popup">
       <p class="cookie-title">This site use cookies</p>
       <div class="cookie-text-space">
         <span class="cookie-text">
-          
+
           <!-- /////////////////////////////////// -->
 
         </span>
