@@ -1,6 +1,6 @@
 :root {
-  --game-height: auto;
-  --game-width: 14.5em;
+  --game-height: 2.5em;
+  --game-width: auto;
 }
 
 
@@ -57,4 +57,16 @@ letter {
     transform: scale(1);
     outline: 0px solid #ffffff;
   }
+}
+
+letter[data-right-letter]{
+  background-color: var(--green);
+}
+
+letter[data-wrong-spot-letter]{
+  background-color: var(--yellow);
+}
+
+letter[data-missed-letter]{
+  background-color: var(--red);
 }

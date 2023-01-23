@@ -33,10 +33,10 @@ require_once("../lib/php/Homescript.php");
       <span class="nav-btn" id="fullChangeModeBtn">
         Mode: <span class="change-mode" id="changeModeBtn" data-mode="0">normale</span>
       </span>
-      <span class="nav-btn stats" id="statsBtn">
+      <!-- <span class="nav-btn stats" id="statsBtn">
         stats
-      </span>
-      <span class="nav-btn rules" id="rulesBtn">
+      </span> -->
+      <span class="nav-btn rules" id="rulesBtn" data-active="0">
         rules
       </span>
       <span class="nav-btn disconnect" id="disconnectBtn">
@@ -45,13 +45,13 @@ require_once("../lib/php/Homescript.php");
     </nav>
   </header>
   <main>
-    <div class="rules-container">
+    <!-- <div class="rules-container">
       <p class="wrap-text">
 
-        <!-- Insert the rules  -->
+        Insert the rules
 
       </p>
-    </div>
+    </div> -->
     <img class="logo" src="./img/logo.png" alt="Parolame" loading="lazy">
     <p class="materia" id="idMateria">The subject of today is
       <span class="materia-text"><?php
@@ -106,7 +106,7 @@ require_once("../lib/php/Homescript.php");
         <game-box>
           <letter data-right-letter></letter>
         </game-box>
-        <game-box>
+        <!-- <game-box>
           <letter data-right-letter></letter>
         </game-box>
         <game-box>
@@ -117,14 +117,14 @@ require_once("../lib/php/Homescript.php");
         </game-box>
         <game-box>
           <letter data-right-letter></letter>
-        </game-box>
+        </game-box> -->
       </game>
       Letters in the wrong spot:
       <game id="gameBoard lettersWrongSpot">
         <game-box>
           <letter data-wrong-spot-letter></letter>
         </game-box>
-        <game-box>
+        <!-- <game-box>
           <letter data-wrong-spot-letter></letter>
         </game-box>
         <game-box>
@@ -135,14 +135,14 @@ require_once("../lib/php/Homescript.php");
         </game-box>
         <game-box>
           <letter data-wrong-spot-letter></letter>
-        </game-box>
+        </game-box> -->
       </game>
       Missing letters:
       <game id="gameBoard lettersMissed">
         <game-box>
           <letter data-missed-letter></letter>
         </game-box>
-        <game-box>
+        <!-- <game-box>
           <letter data-missed-letter></letter>
         </game-box>
         <game-box>
@@ -153,7 +153,7 @@ require_once("../lib/php/Homescript.php");
         </game-box>
         <game-box>
           <letter data-missed-letter></letter>
-        </game-box>
+        </game-box> -->
       </game>
     </div>
   </main>
@@ -210,6 +210,10 @@ require_once("../lib/php/Homescript.php");
         <span class="cookie-btn accept-btn">Allow cookies</span>
       </div>
     </div>
+  </div>
+  <div class="rules-container">
+    <h1>Rules of the game</h1>
+    <p>aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a </p>
   </div>
 </body>
 

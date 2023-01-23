@@ -1,16 +1,23 @@
-const statsBtn = document.querySelector("#statsBtn");
+// const statsBtn = document.querySelector("#statsBtn");
 const rulesBtn = document.querySelector("#rulesBtn");
 const changeMode = document.querySelector("#changeModeBtn");
 const fullChangeMode = document.querySelector("#fullChangeModeBtn");
 const confirmBtn = document.querySelector("#confirmWord");
 const disconnectBtn = document.querySelector(".disconnect");
 
-statsBtn.addEventListener("click", () => {
-  console.log("stats");
-});
+// statsBtn.addEventListener("click", () => {
+//   console.log("stats");
+// });
 
 rulesBtn.addEventListener("click", () => {
-  console.log("rules");
+  const rulesContainer = document.querySelector(".rules-container");
+  if(rulesBtn.getAttribute("data-active")==0){
+    rulesBtn.setAttribute("data-active", "1");
+    rulesContainer.style="display: block;";
+  } else{
+    rulesBtn.setAttribute("data-active", "0");
+    rulesContainer.style="display: none;";
+  }
 });
 
 fullChangeMode.addEventListener("click", () => {
@@ -48,8 +55,66 @@ confirmBtn.addEventListener("click", () => {
   httpReq.onload = ({ target }) => {
     const response = JSON.parse(target.response);
 
-    ////////////////////////////////////////////////////
+    if(response.result == "win"){
+      return alert("YOU WIN");
+    }
 
+    const userAttempt = document.getElementById("nAttemptsRemaing");
+    userAttempt.textContent=response.attemptsRemained;
+      if (parseInt(userAttempt.textContent) > 3) {
+        userAttempt.classList.add("green");
+        userAttempt.classList.remove("yellow");
+        userAttempt.classList.remove("red");
+      } else if (parseInt(userAttempt.textContent) > 1) {
+        userAttempt.classList.add("yellow");
+        userAttempt.classList.remove("green");
+        userAttempt.classList.remove("red");
+      } else {
+        userAttempt.classList.add("red");
+        userAttempt.classList.remove("yellow");
+        userAttempt.classList.remove("green");
+      };
+
+    const idRight=document.getElementById("lettersRights");
+    const idMissed=document.getElementById("lettersMissed");
+    const idWrongSpot=document.getElementById("lettersWrongSpot");
+
+    const right = document.querySelectorAll("letter[data-right-letter]");
+    const missed = document.querySelectorAll("letter[data-missed-letter]");
+    const wrongSpot = document.querySelectorAll("letter[data-wrong-spot-letter]");
+
+    const lettersRightLength=response.lettersRight.length;
+    const rightLength=right.length;
+    for(let i=0; i<lettersRightLength; i++){
+      for(let j=0; j<rightLength; j++){
+        if(right[j]==response.lettersRight[i]){
+          const lObject=letterObject(0);
+          idRight.appendChild(lObject);
+        }
+      }
+    }
+
+    const lettersSpotMissedLength=response.lettersSpotMissed.length;
+    const missedLength=missed.length;
+    for(let i=0; i<lettersSpotMissedLength; i++){
+      for(let j=0; j<missedLength; j++){
+        if(missed[j]==response.lettersSpotMissed[i]){
+          const lObject=letterObject(1);
+          idMissed.appendChild(lObject);
+        }
+      }
+    }
+
+    const lettersMissedLength=response.lettersMissed.length;
+    const wrongSpotLength=wrongSpot.length;
+    for(let i=0; i<lettersMissedLength; i++){
+      for(let j=0; j<wrongSpotLength; j++){
+        if(wrongSpot[j]==response.lettersMissed[i]){
+          const lObject=letterObject(2);
+          idWrongSpot.appendChild(lObject);
+        }
+      }
+    }
   };
   httpReq.open("POST", "../src/checkwordref.php");
   httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -69,3 +134,23 @@ disconnectBtn.addEventListener("click", () => {
   httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   httpReq.send(parameters);
 });
+
+function letterObject (x){
+  const gamebox=document.createElement("game-box");
+  const letter=document.createElement("letter");
+  switch(x){
+    case 0:
+      letter.setAttribute("data-right-letter", "0");
+      gamebox.append(letter);
+      break;
+    case 1:
+      letter.setAttribute("data-wrong-spot-letter", "0");
+      gamebox.append(letter);
+      break;
+    case 2:
+      letter.setAttribute("data-missed-letter", "0");
+      gamebox.append(letter);
+      break;
+  }
+  return gamebox;
+}
