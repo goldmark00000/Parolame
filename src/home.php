@@ -101,24 +101,6 @@ require_once("../lib/php/Homescript.php");
       <button class="confirm-btn" id="confirmWord">Confirm</button>
     </div>
     <div class="letters-used">
-      Letters in the right place:
-      <game id="gameBoard lettersRights">
-        <game-box>
-          <letter data-right-letter></letter>
-        </game-box>
-        <!-- <game-box>
-          <letter data-right-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-right-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-right-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-right-letter></letter>
-        </game-box> -->
-      </game>
       Letters in the wrong spot:
       <game id="gameBoard lettersWrongSpot">
         <game-box>
