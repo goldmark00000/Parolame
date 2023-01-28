@@ -83,6 +83,8 @@ confirmBtn.addEventListener("click", () => {
     const missed = document.querySelectorAll("letter[data-missed-letter]");
     const wrongSpot = document.querySelectorAll("letter[data-wrong-spot-letter]");
 
+
+    
     const lettersRightLength=response.lettersRight.length;
     const rightLength=right.length;
     for(let i=0; i<lettersRightLength; i++){
