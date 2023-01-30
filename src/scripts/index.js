@@ -75,11 +75,11 @@ confirmBtn.addEventListener("click", () => {
         userAttempt.classList.remove("green");
       };
 
-    const idRight=document.getElementById("lettersRights");
+    // const idRight=document.getElementById("lettersRights");
     const idMissed=document.getElementById("lettersMissed");
     const idWrongSpot=document.getElementById("lettersWrongSpot");
 
-    const right = document.querySelectorAll("letter[data-right-letter]");
+    // const right = document.querySelectorAll("letter[data-right-letter]");
     const missed = document.querySelectorAll("letter[data-missed-letter]");
     const wrongSpot = document.querySelectorAll("letter[data-wrong-spot-letter]");
 
