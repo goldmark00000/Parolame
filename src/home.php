@@ -106,36 +106,12 @@ require_once("../lib/php/Homescript.php");
         <game-box>
           <letter data-wrong-spot-letter></letter>
         </game-box>
-        <!-- <game-box>
-          <letter data-wrong-spot-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-wrong-spot-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-wrong-spot-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-wrong-spot-letter></letter>
-        </game-box> -->
       </game>
       Missing letters:
       <game id="gameBoard lettersMissed">
         <game-box>
           <letter data-missed-letter></letter>
         </game-box>
-        <!-- <game-box>
-          <letter data-missed-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-letter></letter>
-        </game-box>
-        <game-box>
-          <letter data-missed-letter></letter>
-        </game-box> -->
       </game>
     </div>
   </main>
