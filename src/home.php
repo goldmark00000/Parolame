@@ -103,15 +103,15 @@ require_once("../lib/php/Homescript.php");
     <div class="letters-used">
       Letters in the wrong spot:
       <game id="gameBoard lettersWrongSpot">
-        <game-box>
+        <!-- <game-box>
           <letter data-wrong-spot-letter></letter>
-        </game-box>
+        </game-box> -->
       </game>
       Missing letters:
       <game id="gameBoard lettersMissed">
-        <game-box>
+        <!-- <game-box>
           <letter data-missed-letter></letter>
-        </game-box>
+        </game-box> -->
       </game>
     </div>
   </main>
