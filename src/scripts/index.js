@@ -84,17 +84,6 @@ confirmBtn.addEventListener("click", () => {
     const wrongSpot = document.querySelectorAll("letter[data-wrong-spot-letter]");
 
 
-    
-    // const lettersRightLength=response.lettersRight.length;
-    // const rightLength=right.length;
-    // for(let i=0; i<lettersRightLength; i++){
-    //   for(let j=0; j<rightLength; j++){
-    //     if(right[j]==response.lettersRight[i]){
-    //       const lObject=letterObject(0);
-    //       idRight.appendChild(lObject);
-    //     }
-    //   }
-    // }
 
     const lettersSpotMissedLength=response.lettersSpotMissed.length;
     const missedLength=missed.length;
