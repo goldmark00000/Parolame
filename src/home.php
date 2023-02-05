@@ -172,7 +172,7 @@ require_once("../lib/php/Homescript.php");
   </div>
   <div class="rules-container">
     <h1>Rules of the game</h1>
-    <p>aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a aaaaaaaaaa a a a a  aa a a  a a  aa  a a a a a </p>
+    <p></p>
   </div>
 </body>
 
