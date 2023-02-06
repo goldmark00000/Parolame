@@ -82,7 +82,7 @@ require_once("../lib/php/Homescript.php");
     </script>
     <game id="gameBoard">
       <game-box>
-        <letter data-letter-input></letter>
+        <letter data-letter-input right-letter></letter>
       </game-box>
       <game-box>
         <letter data-letter-input></letter>
