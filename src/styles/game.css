@@ -4,11 +4,13 @@
 }
 
 
+
 game {
   height: var(--game-height);
   width: var(--game-width);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  place-content: center;
   gap: 0.5em;
 }
 

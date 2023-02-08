@@ -21,11 +21,11 @@ require_once("../lib/php/Homescript.php");
 
 <body>
   <div class="no" id="fakeInputLetters">
-    <letter data-letter-input></letter>
-    <letter data-letter-input></letter>
-    <letter data-letter-input></letter>
-    <letter data-letter-input></letter>
-    <letter data-letter-input></letter>
+  <?php
+      for($i = 0; $i<$wordLength; $i++){
+        echo "<game-box><letter data-letter-input></letter></game-box>";
+      }
+      ?>
   </div>
   <header>
     <nav>
@@ -81,21 +81,14 @@ require_once("../lib/php/Homescript.php");
       };
     </script>
     <game id="gameBoard">
-      <game-box>
+      <?php
+      for($i = 0; $i<$wordLength; $i++){
+        echo "<game-box><letter data-letter-input></letter></game-box>";
+      }
+      ?>
+      <!-- <game-box>
         <letter data-letter-input right-letter></letter>
-      </game-box>
-      <game-box>
-        <letter data-letter-input></letter>
-      </game-box>
-      <game-box>
-        <letter data-letter-input></letter>
-      </game-box>
-      <game-box>
-        <letter data-letter-input></letter>
-      </game-box>
-      <game-box>
-        <letter data-letter-input></letter>
-      </game-box>
+      </game-box> -->
     </game>
     <div>
       <button class="confirm-btn" id="confirmWord">Confirm</button>
