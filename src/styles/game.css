@@ -8,9 +8,11 @@
 game {
   height: var(--game-height);
   width: var(--game-width);
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(7, 1fr);
-  place-content: center;
+  place-content: center; */
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.5em;
 }
 
