@@ -11,25 +11,25 @@ const disconnectBtn = document.querySelector(".disconnect");
 
 rulesBtn.addEventListener("click", () => {
   const rulesContainer = document.querySelector(".rules-container");
-  if(rulesBtn.getAttribute("data-active")==0){
+  if (rulesBtn.getAttribute("data-active") == 0) {
     rulesBtn.setAttribute("data-active", "1");
-    rulesContainer.style="display: block;";
-  } else{
+    rulesContainer.style = "display: block;";
+  } else {
     rulesBtn.setAttribute("data-active", "0");
-    rulesContainer.style="display: none;";
+    rulesContainer.style = "display: none;";
   }
 });
 
 fullChangeMode.addEventListener("click", () => {
   const lettersContainer = document.querySelector(".letters-used");
-  if(changeMode.getAttribute("data-mode")==0){
+  if (changeMode.getAttribute("data-mode") == 0) {
     changeMode.setAttribute("data-mode", "1");
-    lettersContainer.style="opacity: 0;";
-    changeMode.textContent="hard";
-  } else{
+    lettersContainer.style = "opacity: 0;";
+    changeMode.textContent = "hard";
+  } else {
     changeMode.setAttribute("data-mode", "0");
-    lettersContainer.style="opacity: 1;";
-    changeMode.textContent="normal";
+    lettersContainer.style = "opacity: 1;";
+    changeMode.textContent = "normal";
   }
 });
 
@@ -55,58 +55,72 @@ confirmBtn.addEventListener("click", () => {
   httpReq.onload = ({ target }) => {
     const response = JSON.parse(target.response);
 
-    if(response.result == "win"){
+    if (response.result == "win") {
       return alert("YOU WIN");
     }
 
     const userAttempt = document.getElementById("nAttemptsRemaing");
-    userAttempt.textContent=response.attemptsRemained;
-      if (parseInt(userAttempt.textContent) > 3) {
-        userAttempt.classList.add("green");
-        userAttempt.classList.remove("yellow");
-        userAttempt.classList.remove("red");
-      } else if (parseInt(userAttempt.textContent) > 1) {
-        userAttempt.classList.add("yellow");
-        userAttempt.classList.remove("green");
-        userAttempt.classList.remove("red");
-      } else {
-        userAttempt.classList.add("red");
-        userAttempt.classList.remove("yellow");
-        userAttempt.classList.remove("green");
-      };
-
-    // const idRight=document.getElementById("lettersRights");
-    const idMissed=document.getElementById("lettersMissed");
-    const idWrongSpot=document.getElementById("lettersWrongSpot");
-
-    // const right = document.querySelectorAll("letter[data-right-letter]");
-    const missed = document.querySelectorAll("letter[data-missed-letter]");
-    const wrongSpot = document.querySelectorAll("letter[data-wrong-spot-letter]");
-
-
-
-    const lettersSpotMissedLength=response.lettersSpotMissed.length;
-    const missedLength=missed.length;
-    for(let i=0; i<lettersSpotMissedLength; i++){
-      for(let j=0; j<missedLength; j++){
-        if(missed[j]==response.lettersSpotMissed[i]){
-          const lObject=letterObject(1);
-          idMissed.appendChild(lObject);
-        }
-      }
+    userAttempt.textContent = response.attemptsRemained;
+    if (parseInt(userAttempt.textContent) > 3) {
+      userAttempt.classList.add("green");
+      userAttempt.classList.remove("yellow");
+      userAttempt.classList.remove("red");
+    } else if (parseInt(userAttempt.textContent) > 1) {
+      userAttempt.classList.add("yellow");
+      userAttempt.classList.remove("green");
+      userAttempt.classList.remove("red");
+    } else {
+      userAttempt.classList.add("red");
+      userAttempt.classList.remove("yellow");
+      userAttempt.classList.remove("green");
     }
 
-    const lettersMissedLength=response.lettersMissed.length;
-    const wrongSpotLength=wrongSpot.length;
-    for(let i=0; i<lettersMissedLength; i++){
-      for(let j=0; j<wrongSpotLength; j++){
-        if(wrongSpot[j]==response.lettersMissed[i]){
-          const lObject=letterObject(2);
-          idWrongSpot.appendChild(lObject);
-        }
+    const idMissed = document.getElementById("lettersMissed");
+    const idWrongSpot = document.getElementById("lettersWrongSpot");
+
+    const missed = document.querySelectorAll("letter[data-missed-letter]");
+    const wrongSpot = document.querySelectorAll(
+      "letter[data-wrong-spot-letter]"
+    );
+
+    const lettersRightLength = response.lettersRight.length;
+    const rightLength = missed.length;
+    const lettersBox = document.querySelectorAll(
+      "letter[data-letter-input]"
+    );
+    const lengthLetters = lettersBox.length;
+    let lengthWord = lengthLetters / 2;
+    for (let i = 0; i < lettersRightLength; i++) {
+      for (let j = 0; j < rightLength; j++) {
+        const letterPosition = response.lettersRight[j].position;
+        lettersBox[lengthWord + letterPosition].textContent=response.lettersRight[j].letter;
+        lettersBox[lengthWord + letterPosition].setAttribute("data-right-letter");
+        lengthWord++;
       }
     }
   };
+
+  const lettersSpotMissedLength = response.lettersSpotMissed.length;
+  const missedLength = missed.length;
+  for (let i = 0; i < lettersSpotMissedLength; i++) {
+    for (let j = 0; j < missedLength; j++) {
+      if (missed[j] == response.lettersSpotMissed[i]) {
+        const lObject = letterObject(1);
+        idMissed.appendChild(lObject);
+      }
+    }
+  }
+
+  const lettersMissedLength = response.lettersMissed.length;
+  const wrongSpotLength = wrongSpot.length;
+  for (let i = 0; i < lettersMissedLength; i++) {
+    for (let j = 0; j < wrongSpotLength; j++) {
+      if (wrongSpot[j] == response.lettersMissed[i]) {
+        const lObject = letterObject(2);
+        idWrongSpot.appendChild(lObject);
+      }
+    }
+  }
   httpReq.open("POST", "../src/checkwordref.php");
   httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   httpReq.send(parameters);
@@ -119,20 +133,20 @@ disconnectBtn.addEventListener("click", () => {
   const httpReq = new XMLHttpRequest();
   let parameters = `disconnect=1`;
   httpReq.onload = () => {
-    location.href="../src/login.php";
+    location.href = "../src/login.php";
   };
   httpReq.open("POST", "../src/disconnectref.php");
   httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   httpReq.send(parameters);
 });
 
-function letterObject (x){
-  const gamebox=document.createElement("game-box");
-  const letter=document.createElement("letter");
-  switch(x){
+function letterObject(x) {
+  const gamebox = document.createElement("game-box");
+  const letter = document.createElement("letter");
+  switch (x) {
     case 0:
-      letter.setAttribute("data-right-letter", "0");
-      gamebox.append(letter);
+      // letter.setAttribute("data-right-letter", "0");
+      // gamebox.append(letter);
       break;
     case 1:
       letter.setAttribute("data-wrong-spot-letter", "0");
