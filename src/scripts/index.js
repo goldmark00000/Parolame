@@ -105,7 +105,7 @@ confirmBtn.addEventListener("click", () => {
   for (let i = 0; i < lettersSpotMissedLength; i++) {
     for (let j = 0; j < missedLength; j++) {
       if (missed[j] == response.lettersSpotMissed[i]) {
-        const lObject = letterObject(1);
+        const lObject = letterObject(0);
         idMissed.appendChild(lObject);
       }
     }
@@ -116,7 +116,7 @@ confirmBtn.addEventListener("click", () => {
   for (let i = 0; i < lettersMissedLength; i++) {
     for (let j = 0; j < wrongSpotLength; j++) {
       if (wrongSpot[j] == response.lettersMissed[i]) {
-        const lObject = letterObject(2);
+        const lObject = letterObject(1);
         idWrongSpot.appendChild(lObject);
       }
     }
@@ -145,14 +145,10 @@ function letterObject(x) {
   const letter = document.createElement("letter");
   switch (x) {
     case 0:
-      // letter.setAttribute("data-right-letter", "0");
-      // gamebox.append(letter);
-      break;
-    case 1:
       letter.setAttribute("data-wrong-spot-letter", "0");
       gamebox.append(letter);
       break;
-    case 2:
+    case 1:
       letter.setAttribute("data-missed-letter", "0");
       gamebox.append(letter);
       break;
