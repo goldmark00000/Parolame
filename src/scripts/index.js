@@ -98,7 +98,6 @@ confirmBtn.addEventListener("click", () => {
         lengthWord++;
       }
     }
-  };
 
   const lettersSpotMissedLength = response.lettersSpotMissed.length;
   const missedLength = missed.length;
@@ -106,7 +105,7 @@ confirmBtn.addEventListener("click", () => {
     for (let j = 0; j < missedLength; j++) {
       if (missed[j] == response.lettersSpotMissed[i]) {
         const lObject = letterObject(0);
-        idMissed.appendChild(lObject);
+        idMissed.append(lObject);
       }
     }
   }
@@ -117,10 +116,10 @@ confirmBtn.addEventListener("click", () => {
     for (let j = 0; j < wrongSpotLength; j++) {
       if (wrongSpot[j] == response.lettersMissed[i]) {
         const lObject = letterObject(1);
-        idWrongSpot.appendChild(lObject);
+        idWrongSpot.append(lObject);
       }
     }
-  }
+  }}
   httpReq.open("POST", "../src/checkwordref.php");
   httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   httpReq.send(parameters);
