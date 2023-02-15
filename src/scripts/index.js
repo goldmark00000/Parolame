@@ -92,10 +92,16 @@ confirmBtn.addEventListener("click", () => {
     let lengthWord = lengthLetters / 2;
     for (let i = 0; i < lettersRightLength; i++) {
       for (let j = 0; j < rightLength; j++) {
+
+        
         const letterPosition = response.lettersRight[j].position;
         lettersBox[lengthWord + letterPosition].textContent=response.lettersRight[j].letter;
         lettersBox[lengthWord + letterPosition].setAttribute("data-right-letter");
         lengthWord++;
+
+
+
+
       }
     }
 
