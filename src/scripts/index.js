@@ -85,47 +85,43 @@ confirmBtn.addEventListener("click", () => {
 
     const lettersRightLength = response.lettersRight.length;
     const rightLength = missed.length;
-    const lettersBox = document.querySelectorAll(
-      "letter[data-letter-input]"
-    );
+    const lettersBox = document.querySelectorAll("letter[data-letter-input]");
     const lengthLetters = lettersBox.length;
     let lengthWord = lengthLetters / 2;
     for (let i = 0; i < lettersRightLength; i++) {
       for (let j = 0; j < rightLength; j++) {
-
-        
         const letterPosition = response.lettersRight[j].position;
-        lettersBox[lengthWord + letterPosition].textContent=response.lettersRight[j].letter;
-        lettersBox[lengthWord + letterPosition].setAttribute("data-right-letter");
+        lettersBox[lengthWord + letterPosition].textContent =
+          response.lettersRight[j].letter;
+        lettersBox[lengthWord + letterPosition].setAttribute(
+          "data-right-letter"
+        );
         lengthWord++;
-
-
-
-
       }
     }
 
-  const lettersSpotMissedLength = response.lettersSpotMissed.length;
-  const missedLength = missed.length;
-  for (let i = 0; i < lettersSpotMissedLength; i++) {
-    for (let j = 0; j < missedLength; j++) {
-      if (missed[j] == response.lettersSpotMissed[i]) {
-        const lObject = letterObject(0);
-        idMissed.append(lObject);
+    const lettersSpotMissedLength = response.lettersSpotMissed.length;
+    const missedLength = missed.length;
+    for (let i = 0; i < lettersSpotMissedLength; i++) {
+      for (let j = 0; j < missedLength; j++) {
+        if (missed[j] == response.lettersSpotMissed[i]) {
+          const lObject = letterObject(0);
+          idMissed.append(lObject);
+        }
       }
     }
-  }
 
-  const lettersMissedLength = response.lettersMissed.length;
-  const wrongSpotLength = wrongSpot.length;
-  for (let i = 0; i < lettersMissedLength; i++) {
-    for (let j = 0; j < wrongSpotLength; j++) {
-      if (wrongSpot[j] == response.lettersMissed[i]) {
-        const lObject = letterObject(1);
-        idWrongSpot.append(lObject);
+    const lettersMissedLength = response.lettersMissed.length;
+    const wrongSpotLength = wrongSpot.length;
+    for (let i = 0; i < lettersMissedLength; i++) {
+      for (let j = 0; j < wrongSpotLength; j++) {
+        if (wrongSpot[j] == response.lettersMissed[i]) {
+          const lObject = letterObject(1);
+          idWrongSpot.append(lObject);
+        }
       }
     }
-  }}
+  };
   httpReq.open("POST", "../src/checkwordref.php");
   httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   httpReq.send(parameters);
