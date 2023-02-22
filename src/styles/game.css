@@ -74,3 +74,17 @@ letter[data-wrong-spot-letter]{
 letter[data-missed-letter]{
   background-color: var(--red);
 }
+
+@keyframes spin-letter {
+  0% {
+    
+  }
+
+  50% {
+    
+  }
+
+  100% {
+    
+  }
+}
