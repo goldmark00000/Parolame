@@ -84,6 +84,7 @@ letter[data-missed-letter]{
   50% {
     background-color: yellow;
     /* transform: rotateX(360deg); */
+    
   }
 
   100% {
