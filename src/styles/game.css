@@ -84,8 +84,7 @@ letter[data-missed-letter]{
   50% {
     background-color: yellow;
     /* transform: rotateX(360deg); */
-    transform: rotateY(360deg);
-    transform: rotateZ(360deg);
+    /* transform: rotateY(360deg); */
     
     
   }
@@ -94,4 +93,10 @@ letter[data-missed-letter]{
     background-color: red;
     transform: rotateX(720deg);
   }
+}
+
+.display-animation{
+  animation-name: spin-letter;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
 }

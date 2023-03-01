@@ -83,7 +83,9 @@ require_once("../lib/php/Homescript.php");
     <game id="gameBoard">
       <?php
       for($i = 0; $i<$wordLength; $i++){
-        echo "<game-box><letter data-letter-input></letter></game-box>";
+        echo "<game-box
+        class= \"display-animation\"
+        ><letter data-letter-input></letter></game-box>";
       }
       ?>
       <!-- <game-box>
