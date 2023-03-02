@@ -91,7 +91,7 @@ letter[data-missed-letter]{
 
   100% {
     background-color: red;
-    transform: rotateX(720deg);
+    transform: rotate3d(360deg, 360deg, 360deg);
   }
 }
 
