@@ -78,11 +78,12 @@ letter[data-missed-letter]{
 @keyframes spin-letter {
   0% {
     background-color: green;
-    transform: rotateX(0deg);
+    /* transform: rotateX(0deg); */
   }
 
   50% {
     background-color: yellow;
+    transform: rotate3d(180deg, 180deg, 180deg)
     /* transform: rotateX(360deg); */
     /* transform: rotateY(360deg); */
     
