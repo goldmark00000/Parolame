@@ -86,6 +86,8 @@ letter[data-missed-letter]{
     transform: rotate3d(180deg, 180deg, 180deg)
     /* transform: rotateX(360deg); */
     /* transform: rotateY(360deg); */
+
+    
     
     
   }
