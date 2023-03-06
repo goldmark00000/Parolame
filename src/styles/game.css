@@ -83,11 +83,11 @@ letter[data-missed-letter]{
 
   50% {
     background-color: yellow;
-    transform: rotate3d(180deg, 180deg, 180deg)
+    /* transform: rotate3d(180deg, 180deg, 180deg); */
     /* transform: rotateX(360deg); */
     /* transform: rotateY(360deg); */
 
-    
+    transform: matrix3d();
     
     
   }
