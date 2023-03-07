@@ -87,7 +87,7 @@ letter[data-missed-letter]{
     /* transform: rotateX(360deg); */
     /* transform: rotateY(360deg); */
 
-    transform: matrix3d();
+    /* transform: matrix3d(); */
     
     
   }
