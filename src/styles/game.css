@@ -97,6 +97,6 @@ letter[data-missed-letter]{
 
 .display-animation{
   animation-name: spin-letter;
-  animation-duration: 5000ms;
+  animation-duration: 4000ms;
   animation-iteration-count: infinite;
 }
