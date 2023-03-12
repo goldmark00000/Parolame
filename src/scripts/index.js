@@ -122,6 +122,7 @@ confirmBtn.addEventListener("click", () => {
       }
     }
   };
+  
   httpReq.open("POST", "../src/checkwordref.php");
   httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   httpReq.send(parameters);
