@@ -1,6 +1,3 @@
-const wordlLength = 6;
-const wordls = [];
-
 addEventListener("keydown", ({ key, keyCode }) => {
   const letters = document.querySelectorAll("letter[data-letter-input]");
   const tagLength = letters.length;
