@@ -50,6 +50,11 @@ confirmBtn.addEventListener("click", () => {
     }
     checkTheWord += lettersBox[i].textContent;
   }
+
+  for (let i = lengthWord; i < lengthLetters; i++) {
+    lettersBox[i].style="";
+  }
+
   const httpReq = new XMLHttpRequest();
   let parameters = `checkWord=${checkTheWord}`;
   httpReq.onload = ({ target }) => {
