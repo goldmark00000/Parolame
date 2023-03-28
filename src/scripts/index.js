@@ -52,7 +52,7 @@ confirmBtn.addEventListener("click", () => {
   }
 
   for (let i = lengthWord; i < lengthLetters; i++) {
-    lettersBox[i].style="animation-name: spin-letter; animation-duration: 4000ms; animation-iteration-count: 1;";
+    lettersBox[i].style="animation-name: spin-letter; animation-duration: 3000ms; animation-iteration-count: 1;";
   }
 
   const httpReq = new XMLHttpRequest();
