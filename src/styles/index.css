@@ -38,17 +38,14 @@ nav {
 main {
   height: calc(100vh - 3em);
   width: 100%;
-  display: grid;
-  place-items: center;
-  gap: 0;
-}
-
-.rules-container {
-  position: absolute;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
 }
 
 .wrap-text {
+  margin-left: 10%;
   width: 80%;
   height: auto;
   overflow-wrap: break-word;
@@ -92,6 +89,7 @@ main {
 .attempts>span {
   font-size: 1.2rem;
 }
+
 .keyboard-box{
   position: fixed;
   left: 0;
@@ -197,13 +195,14 @@ main {
 .rules-container{
   position: absolute;
   top: 5em;
-  left: 22em;
+  left: calc(50% - 13em);
   border: 1px solid #ffffff;
   border-radius: 0.3em;
-  width: 40em;
-  height: 30em;
+  width: 26em;
+  height: 18em;
   background-color: #ffffff;
   display: none;
+  z-index: 1000;
 }
 
 .rules-container>h1{
@@ -217,3 +216,40 @@ main {
 }
 
 
+.stats-container{
+  --width: 20vw;
+  position: absolute;
+  left: calc(50vw - (var(--width)/2));
+  top: 6em;
+  width: var(--width);
+  height: auto;
+  padding: 2em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  border-radius: 1em;
+  border: 1px solid #000;
+  box-shadow: inset 0px 0px 50px 10px rgba(0, 0, 0, 0.6);
+  transform: translateY(0em);
+  opacity: 0;
+  transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
+  font-weight: 500;
+}
+
+.stats-container > button{
+  padding: 0.5em 0 0.5em 0; 
+  border-radius: 3px;
+  color: #000;
+  border-color: rgb(255, 0, 0);
+  transition: box-shadow 300ms ease-in-out;
+}
+
+.stats-container > button:hover{
+  box-shadow: inset 0px 0px 50px 10px rgba(255, 0, 0, 0.6);
+}
+
+.winner{
+  color: #fff;
+  font-size: 1.5rem;
+}

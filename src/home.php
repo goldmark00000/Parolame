@@ -21,21 +21,21 @@ require_once("../lib/php/Homescript.php");
 
 <body>
   <div class="no" id="fakeInputLetters">
-  <?php
-      for($i = 0; $i<$wordLength; $i++){
-        echo "<game-box><letter data-letter-input></letter></game-box>";
-      }
-      ?>
+    <?php
+    for ($i = 0; $i < $wordLength; $i++) {
+      echo "<game-box><letter data-letter-input=\"0\"></letter></game-box>";
+    }
+    ?>
   </div>
   <header>
     <nav>
-      <span class="player-id" id="idPlayer">ACCOUNT: <?php echo $userId;?></span>
+      <span class="player-id" id="idPlayer">ACCOUNT: <?php echo $userId; ?></span>
       <span class="nav-btn" id="fullChangeModeBtn">
         Mode: <span class="change-mode" id="changeModeBtn" data-mode="0">normale</span>
       </span>
-      <!-- <span class="nav-btn stats" id="statsBtn">
+      <span class="nav-btn stats" id="statsBtn">
         stats
-      </span> -->
+      </span>
       <span class="nav-btn rules" id="rulesBtn" data-active="0">
         rules
       </span>
@@ -45,13 +45,16 @@ require_once("../lib/php/Homescript.php");
     </nav>
   </header>
   <main>
-    <!-- <div class="rules-container">
+    <div class="rules-container">
+    <h1>Rules of the game</h1>
       <p class="wrap-text">
-
-        Insert the rules
-
+        In questo gioco hai 5 tentativi per indovinare la parola.
+        Questa parola viene scelta in base alla materia che cambia ogni giorno.
+        Se si riesce a indovinare la parola entro i 5 tentativi avrai vinto e inizirà la tua streak di win.
+        Se una volta non riuscirai ad indovinare la parola perderai la tua win streak.
+        Questo gioco mira a fare conoscere nuove parole alle persone.
       </p>
-    </div> -->
+    </div>
     <img class="logo" src="./img/logo.png" alt="Parolame" loading="lazy">
     <p class="materia" id="idMateria">The subject of today is
       <span class="materia-text"><?php
@@ -67,46 +70,44 @@ require_once("../lib/php/Homescript.php");
                                   echo $subject;
                                   ?></span>
     </p>
-    <span class="attempts">Remain attempts: <span id="nAttemptsRemaing"><?php
-                                                                        echo $userAttempts;
-                                                                        ?></span></span>
-    <script>
-      const userAttempt = document.getElementById("nAttemptsRemaing");
+    <?php
+    if ($winner != true) {
+      echo "<span class=\"attempts\">Remain attempts: <span id=\"nAttemptsRemaing\">";
+      echo $userAttempts;
+      echo "</span></span>";
+      echo "<script>
+      const userAttempt = document.getElementById(\"nAttemptsRemaing\");
       if (parseInt(userAttempt.textContent) > 3) {
-        userAttempt.classList.add("green");
+        userAttempt.classList.add(\"green\");
       } else if (parseInt(userAttempt.textContent) > 1) {
-        userAttempt.classList.add("yellow");
+        userAttempt.classList.add(\"yellow\");
       } else {
-        userAttempt.classList.add("red");
+        userAttempt.classList.add(\"red\");
       };
-    </script>
-    <game id="gameBoard">
+      </script>";
+    }
+    else {
+      echo "<span class=\"winner\">You won for today, see you tomorrow!</span>";
+    }
+    ?>
+    <game id="">
       <?php
-      for($i = 0; $i<$wordLength; $i++){
+      for ($i = 0; $i < $wordLength; $i++) {
         echo "<game-box
-        class= \"display-animation\"
-        ><letter data-letter-input></letter></game-box>";
+        class= \"\"
+        ><letter data-letter-input=\"0\"></letter></game-box>";
       }
       ?>
-      <!-- <game-box>
-        <letter data-letter-input right-letter></letter>
-      </game-box> -->
     </game>
     <div>
       <button class="confirm-btn" id="confirmWord">Confirm</button>
     </div>
     <div class="letters-used">
       Letters in the wrong spot:
-      <game id="gameBoard lettersWrongSpot">
-        <!-- <game-box>
-          <letter data-wrong-spot-letter></letter>
-        </game-box> -->
+      <game id="lettersWrongSpot">
       </game>
       Missing letters:
-      <game id="gameBoard lettersMissed">
-        <!-- <game-box>
-          <letter data-missed-letter></letter>
-        </game-box> -->
+      <game id="lettersMissed">
       </game>
     </div>
   </main>
@@ -124,7 +125,7 @@ require_once("../lib/php/Homescript.php");
         <div class="keys-btn" data-info="i">i</div>
         <div class="keys-btn" data-info="o">o</div>
         <div class="keys-btn" data-info="p">p</div>
-        <div class="keys-btn canc-btn" data-info="canc"><img src="./img/delete.svg"></div>
+        <div class="keys-btn canc-btn" data-info="canc"><img src="./img/delete.svg" alt="canc" loading="lazy"></div>
       </div>
       <div class="row">
         <div class="keys-btn" data-info="a">a</div>
@@ -163,10 +164,6 @@ require_once("../lib/php/Homescript.php");
         <span class="cookie-btn accept-btn">Allow cookies</span>
       </div>
     </div>
-  </div>
-  <div class="rules-container">
-    <h1>Rules of the game</h1>
-    <p></p>
   </div>
 </body>
 

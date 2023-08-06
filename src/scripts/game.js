@@ -5,7 +5,7 @@ addEventListener("keydown", ({ key, keyCode }) => {
   if (keyCode === 8) {
     let c;
     for (let i = totLength; i < tagLength; i++) {
-      if (letters[i].textContent === "" /*&& i!==0*/) {
+      if (letters[i].textContent === "") {
         letters[i - 1].textContent = "";
         letters[i - 1].style = "";
         return;
@@ -23,7 +23,7 @@ addEventListener("keydown", ({ key, keyCode }) => {
       if (letters[i].textContent === "") {
         letters[i].textContent = key;
         letters[i].style =
-          "animation-name: write-letters; animation-duration: 1s; animation-iteration-count: 1;";
+          "animation-name: writing-letters; animation-duration: 500ms; animation-iteration-count: 1;";
         return;
       }
     }

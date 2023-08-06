@@ -33,7 +33,9 @@ confirmBtn.addEventListener("click", () => {
     idPlayerDisplay.textContent = responseJSON.idNewPlayer;
     document.getElementById("displayPassword").remove();
     document.getElementById("displayConfirmPassword").remove();
+    document.querySelector(".btns-space").remove();
     idPlayerContainer.style = "display: block;";
+    document.querySelector(".link-login-acc").textContent = "Click here to go to login";
   };
 
   httpReq.open("POST", "../src/newaccountref.php");

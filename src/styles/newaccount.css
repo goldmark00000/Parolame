@@ -6,6 +6,10 @@ body {
 .logo {
   height: 6em;
   width: 25em;
+  animation-name: up-down;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 3000ms;
 }
 
 .background {
@@ -116,4 +120,16 @@ body {
 .id-player-display{
   color: var(--yellow);
   font-weight: bold;
+}
+
+@keyframes up-down{
+  0%{
+    transform: translateY(-0.1em);
+  }
+  50%{
+    transform: translateY(0.1em);
+  }
+  100%{
+    transform: translateY(-0.1em);
+  }
 }

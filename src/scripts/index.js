@@ -1,13 +1,56 @@
-// const statsBtn = document.querySelector("#statsBtn");
+const statsBtn = document.querySelector("#statsBtn");
 const rulesBtn = document.querySelector("#rulesBtn");
 const changeMode = document.querySelector("#changeModeBtn");
 const fullChangeMode = document.querySelector("#fullChangeModeBtn");
 const confirmBtn = document.querySelector("#confirmWord");
 const disconnectBtn = document.querySelector(".disconnect");
 
-// statsBtn.addEventListener("click", () => {
-//   console.log("stats");
-// });
+statsBtn.addEventListener("click", () => {
+  if (document.querySelector(".stats-container")) {
+    return;
+  }
+
+  const httpReq = new XMLHttpRequest();
+
+  httpReq.onload = ({ target }) => {
+    const response = JSON.parse(target.response);
+    const containerStats = document.createElement("div");
+    containerStats.classList.add("stats-container");
+    setTimeout(() => {
+      containerStats.style = "transform: translateY(1em); opacity: 1;";
+    }, 10);
+
+    const rightAnswersSpan = document.createElement("span");
+    rightAnswersSpan.textContent = "Right words: " + response.nRightWords;
+    containerStats.append(rightAnswersSpan);
+
+    const wrongAnswersSpan = document.createElement("span");
+    wrongAnswersSpan.textContent = "Wrong words: " + response.nWrongWords;
+    containerStats.append(wrongAnswersSpan);
+
+    const actualStreakSpan = document.createElement("span");
+    actualStreakSpan.textContent = "Actual Streak: " + response.actuallyStreak;
+    containerStats.append(actualStreakSpan);
+
+    const maxStreakSpan = document.createElement("span");
+    maxStreakSpan.textContent = "Max Streak: " + response.maxStreak;
+    containerStats.append(maxStreakSpan);
+
+    const closeBtn = document.createElement("button");
+    closeBtn.textContent = "Close";
+    containerStats.append(closeBtn);
+
+    closeBtn.addEventListener("click", () => {
+      document.querySelector(".stats-container").remove();
+    });
+
+    document.querySelector("body").append(containerStats);
+  };
+
+  httpReq.open("POST", "../src/statsref.php");
+  httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  httpReq.send();
+});
 
 rulesBtn.addEventListener("click", () => {
   const rulesContainer = document.querySelector(".rules-container");
@@ -52,7 +95,8 @@ confirmBtn.addEventListener("click", () => {
   }
 
   for (let i = lengthWord; i < lengthLetters; i++) {
-    lettersBox[i].style="animation-name: spin-letter; animation-duration: 3000ms; animation-iteration-count: 1;";
+    lettersBox[i].style =
+      "animation-name: spin-letter; animation-duration: 3000ms; animation-iteration-count: 1;";
   }
 
   const httpReq = new XMLHttpRequest();
@@ -61,7 +105,7 @@ confirmBtn.addEventListener("click", () => {
     const response = JSON.parse(target.response);
 
     if (response.result == "win") {
-      return alert("YOU WIN");
+      window.location.reload();
     }
 
     const userAttempt = document.getElementById("nAttemptsRemaing");
@@ -80,56 +124,119 @@ confirmBtn.addEventListener("click", () => {
       userAttempt.classList.remove("green");
     }
 
-    const idMissed = document.getElementById("lettersMissed");
-    const idWrongSpot = document.getElementById("lettersWrongSpot");
+    const idMissed = document.querySelector("#lettersMissed");
+    const idWrongSpot = document.querySelector("#lettersWrongSpot");
 
-    const missed = document.querySelectorAll("letter[data-missed-letter]");
-    const wrongSpot = document.querySelectorAll(
-      "letter[data-wrong-spot-letter]"
-    );
+    // console.log("id missed: "+ idMissed)
+    // console.log("id wrong spot: "+ idWrongSpot)
+
+    const checkMissed = () => {
+      if (document.querySelectorAll("letter[data-missed-letter]") == true) {
+        return document.querySelectorAll("letter[data-missed-letter]");
+      }
+      return 0;
+    };
+    const checkWrongSpot = () => {
+      if (document.querySelectorAll("letter[data-wrong-spot-letter]")  == true) {
+        return document.querySelectorAll("letter[data-wrong-spot-letter]");
+      }
+      return 0;
+    };
+
+    const missed = checkMissed();
+    const wrongSpot = checkWrongSpot();
 
     const lettersRightLength = response.lettersRight.length;
-    const rightLength = missed.length;
     const lettersBox = document.querySelectorAll("letter[data-letter-input]");
+
+    // console.log("lista letter: " + lettersBox);
+
     const lengthLetters = lettersBox.length;
+
+    // console.log("length letter: " + lengthLetters);
+
     let lengthWord = lengthLetters / 2;
-    for (let i = 0; i < lettersRightLength; i++) {
-      for (let j = 0; j < rightLength; j++) {
+    for (let i = 0; i < lengthWord; i++) {
+      for (let j = 0; j < lettersRightLength; j++) {
         const letterPosition = response.lettersRight[j].position;
         lettersBox[lengthWord + letterPosition].textContent =
           response.lettersRight[j].letter;
         lettersBox[lengthWord + letterPosition].setAttribute(
-          "data-right-letter"
+          "data-letter-input", "1"
         );
-        lengthWord++;
+      }
+    }
+
+    for (let i = 0; i < lengthWord; i++) {
+      if(lettersBox[i].getAttribute("data-letter-input") == 0){
+        lettersBox[i].textContent="";
       }
     }
 
     const lettersSpotMissedLength = response.lettersSpotMissed.length;
-    const missedLength = missed.length;
-    for (let i = 0; i < lettersSpotMissedLength; i++) {
-      for (let j = 0; j < missedLength; j++) {
-        if (missed[j] == response.lettersSpotMissed[i]) {
-          const lObject = letterObject(0);
-          idMissed.append(lObject);
+
+    if (wrongSpot === 0) {
+      for (let i = 0; i < lettersSpotMissedLength; i++) {
+        const gamebox = document.createElement("game-box");
+        const letter = document.createElement("letter");
+        letter.setAttribute("data-wrong-spot-letter", "0");
+        letter.textContent = response.lettersSpotMissed[i];
+        gamebox.append(letter);
+        idWrongSpot.append(gamebox);
+      }
+    } else {
+      const wrongSpotLength = wrongSpot.length;
+      for (let i = 0; i < lettersSpotMissedLength; i++) {
+        for (let j = 0; j < wrongSpotLength; j++) {
+          if (wrongSpot[j].textContent != response.lettersSpotMissed[i]) {
+            const gamebox = document.createElement("game-box");
+            const letter = document.createElement("letter");
+            letter.setAttribute("data-wrong-spot-letter", "0");
+            letter.textContent = response.lettersSpotMissed[i];
+            gamebox.append(letter);
+            idWrongSpot.append(gamebox);
+          }
+        }
+      }
+    }
+    
+    const lettersMissedLength = response.lettersMissed.length;
+    // console.log("length missed: " + lettersMissedLength)
+    // console.log("missed: " + missed)
+    
+    if (missed === 0) {
+      for (let i = 0; i < lettersMissedLength; i++) {
+        const gamebox = document.createElement("game-box");
+        const letter = document.createElement("letter");
+        letter.setAttribute("data-missed-letter", "0");
+        letter.textContent = response.lettersMissed[i];
+        gamebox.append(letter);
+        idMissed.append(gamebox);
+      }
+    } else {
+      const missedLength = missed.length;
+      for (let i = 0; i < lettersMissedLength; i++) {
+        for (let j = 0; j < missedLength; j++) {
+          if (missed[j].textContent != response.lettersMissed[i]) {
+            const gamebox = document.createElement("game-box");
+            const letter = document.createElement("letter");
+            letter.setAttribute("data-missed-letter", "0");
+            letter.textContent = response.lettersMissed[i];
+            gamebox.append(letter);
+            idMissed.append(gamebox);
+          }
         }
       }
     }
 
-    const lettersMissedLength = response.lettersMissed.length;
-    const wrongSpotLength = wrongSpot.length;
-    for (let i = 0; i < lettersMissedLength; i++) {
-      for (let j = 0; j < wrongSpotLength; j++) {
-        if (wrongSpot[j] == response.lettersMissed[i]) {
-          const lObject = letterObject(1);
-          idWrongSpot.append(lObject);
-        }
-      }
-    }
+    
+
   };
-  
   httpReq.open("POST", "../src/checkwordref.php");
-  httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  httpReq.setRequestHeader(
+    "Content-type",
+    "application/x-www-form-urlencoded"
+  );
   httpReq.send(parameters);
 });
 
@@ -146,26 +253,3 @@ disconnectBtn.addEventListener("click", () => {
   httpReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   httpReq.send(parameters);
 });
-
-function letterObject(x) {
-  const gamebox = document.createElement("game-box");
-  const letter = document.createElement("letter");
-  switch (x) {
-    case 0:
-      letter.setAttribute("data-wrong-spot-letter", "0");
-      gamebox.append(letter);
-      break;
-    case 1:
-      letter.setAttribute("data-missed-letter", "0");
-      gamebox.append(letter);
-      break;
-  }
-  return gamebox;
-}
-
-
-
-
-
-
-

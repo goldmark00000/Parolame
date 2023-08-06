@@ -20,12 +20,12 @@ game-box {
   height: 2.5em;
   width: 2.5em;
   grid-column: span 1;
-  background-color: var(--gray-dark);
+  background-color: var(--gray-light);
   outline: 1px solid #fff;
 }
 
 letter {
-  color: #fff;
+  color: #000;
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -46,58 +46,46 @@ letter {
   color: #fff;
 }
 
-@keyframes write-letters {
+@keyframes writing-letters {
   0% {
-    transform: scale(1);
-    outline: 0px solid #ffffff;
+    transform: translateY(0em);
   }
 
   50% {
-    transform: scale(1.2);
-    outline: 1px solid #ffffff;
+    transform: translateY(-1em);
   }
 
   100% {
-    transform: scale(1);
-    outline: 0px solid #ffffff;
+    transform: translateY(0em);
   }
 }
 
-letter[data-right-letter]{
+letter[data-letter-input="1"] {
   background-color: var(--green);
 }
 
-letter[data-wrong-spot-letter]{
+letter[data-wrong-spot-letter] {
   background-color: var(--yellow);
 }
 
-letter[data-missed-letter]{
+letter[data-missed-letter] {
   background-color: var(--red);
 }
 
 @keyframes spin-letter {
   0% {
-    background-color: green;
-  }
-
-  50% {
-    background-color: yellow;
-    transform: rotate3d(180deg, 180deg, 180deg), translateY(-2em);
-
-    /* transform: matrix3d(); */
-    
-    
-    
+    transform: rotateX(0deg);
   }
 
   100% {
-    background-color: red;
-    transform: rotate3d(360deg, 360deg, 360deg), translateY(0em);
+    transform: rotateX(360deg);
   }
 }
 
-.display-animation{
+.display-animation {
   animation-name: spin-letter;
-  animation-duration: 4000ms;
-  animation-iteration-count: infinite;
+  animation-duration: 1000ms;
+  animation-iteration-count: 1;
+  animation-delay: 300ms;
+  animation-timing-function: linear;
 }
