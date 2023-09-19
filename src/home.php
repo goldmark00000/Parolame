@@ -1,7 +1,7 @@
 <?php
 require_once("../lib/php/Homescript.php");
-?>
-<!DOCTYPE html>
+
+echo '<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,16 +20,20 @@ require_once("../lib/php/Homescript.php");
 </head>
 
 <body>
-  <div class="no" id="fakeInputLetters">
-    <?php
+  <div class="no" id="fakeInputLetters">';
+
+
     for ($i = 0; $i < $wordLength; $i++) {
       echo "<game-box><letter data-letter-input=\"0\"></letter></game-box>";
     }
-    ?>
-  </div>
+
+
+  echo '</div>
   <header>
     <nav>
-      <span class="player-id" id="idPlayer">ACCOUNT: <?php echo $userId; ?></span>
+      <span class="player-id" id="idPlayer">ACCOUNT: ';
+       echo $userId;
+       echo '</span>
       <span class="nav-btn" id="fullChangeModeBtn">
         Mode: <span class="change-mode" id="changeModeBtn" data-mode="0">normale</span>
       </span>
@@ -57,20 +61,22 @@ require_once("../lib/php/Homescript.php");
     </div>
     <img class="logo" src="./img/logo.png" alt="Parolame" loading="lazy">
     <p class="materia" id="idMateria">The subject of today is
-      <span class="materia-text"><?php
-                                  require_once($pathFiles[0]);
-                                  $subject;
-                                  try {
-                                    $sbj = new Subject();
-                                    $subject = $sbj->getSubject();
-                                  } catch (Exception $e) {
-                                    echo $e;
-                                    exit();
-                                  }
-                                  echo $subject;
-                                  ?></span>
-    </p>
-    <?php
+      <span class="materia-text">';
+      
+    require_once($pathFiles[0]);
+    $subject;
+    try {
+      $sbj = new Subject();
+      $subject = $sbj->getSubject();
+    } catch (Exception $e) {
+      echo $e;
+      exit();
+    }
+    echo $subject;
+    
+    
+    echo '</span></p>';
+
     if ($winner != true) {
       echo "<span class=\"attempts\">Remain attempts: <span id=\"nAttemptsRemaing\">";
       echo $userAttempts;
@@ -89,16 +95,17 @@ require_once("../lib/php/Homescript.php");
     else {
       echo "<span class=\"winner\">You won for today, see you tomorrow!</span>";
     }
-    ?>
-    <game id="">
-      <?php
+
+    echo '<game id="">';
+
       for ($i = 0; $i < $wordLength; $i++) {
         echo "<game-box
         class= \"\"
         ><letter data-letter-input=\"0\"></letter></game-box>";
       }
-      ?>
-    </game>
+
+
+    echo '</game>
     <div>
       <button class="confirm-btn" id="confirmWord">Confirm</button>
     </div>
@@ -167,4 +174,4 @@ require_once("../lib/php/Homescript.php");
   </div>
 </body>
 
-</html>
+</html>';

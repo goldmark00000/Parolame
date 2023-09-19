@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php
+echo '<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,7 +14,7 @@
 </head>
 <body>
   <div class="background">
-  <img class="logo" src="./img/logo.png" alt="Parolame">
+  <img class="logo" src="./img/logo.png" alt="Parolame" loading="lazy">
     <div class="new-account-container">
       <div class="elements-container">
         <div class="text-container">
@@ -34,7 +35,7 @@
           <button class="new-account-btn confirm-btn">Confirm</button>
         </span>
       </div>
-      <a href="./login.php" class="link-login-acc">Have you an account and do you want log in?</a>
+      <a href="./login.php" class="link-login-acc">Do you have an account? Click here</a>
     </div>
   </div>
   <div class="cookie-background">
@@ -53,4 +54,4 @@
     </div>
   </div>
 </body>
-</html>
+</html>';

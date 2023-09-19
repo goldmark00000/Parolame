@@ -7,14 +7,14 @@ addEventListener("keydown", ({ key, keyCode }) => {
     for (let i = totLength; i < tagLength; i++) {
       if (letters[i].textContent === "") {
         letters[i - 1].textContent = "";
-        letters[i - 1].style = "";
+        letters[i - 1].parentNode.style = "";
         return;
       }
       c = i;
     }
     if (c != -1) {
       letters[c].textContent = "";
-      letters[c].style = "";
+      letters[c].parentNode.style = "";
     }
     return;
   }
@@ -22,7 +22,7 @@ addEventListener("keydown", ({ key, keyCode }) => {
     for (let i = totLength; i < tagLength; i++) {
       if (letters[i].textContent === "") {
         letters[i].textContent = key;
-        letters[i].style =
+        letters[i].parentNode.style =
           "animation-name: writing-letters; animation-duration: 500ms; animation-iteration-count: 1;";
         return;
       }

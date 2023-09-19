@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 .logo {
@@ -90,6 +91,10 @@ body {
   margin: 1em 0 1em 0;
 }
 
+.link-create-acc:hover{
+  text-decoration: underline;
+}
+
 .btns-space {
   display: flex;
   justify-content: space-between;
@@ -98,6 +103,11 @@ body {
 
 .label-id-user {
   width: 5.5em;
+}
+
+.id-user{
+  user-select: auto;
+  letter-spacing: 0.1rem;
 }
 
 .label-password-user {

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 .logo {
@@ -90,6 +91,10 @@ body {
   margin: 1em 0 1em 0;
 }
 
+.link-login-acc:hover{
+  text-decoration: underline;
+}
+
 .btns-space {
   display: flex;
   justify-content: space-between;
@@ -120,6 +125,7 @@ body {
 .id-player-display{
   color: var(--yellow);
   font-weight: bold;
+  user-select: auto;
 }
 
 @keyframes up-down{
